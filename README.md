@@ -1,4 +1,33 @@
 # AJLStick
 
+**Nothing here yet...
 
-github said i had to have this so.. here you go.
+Just try refreshing.
+
+**I'm sure something will pop up eventually.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deet
