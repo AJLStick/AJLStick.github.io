@@ -1,33 +1,7 @@
 # AJLStick
 
-**Nothing here yet...
+Nothing here yet...
 
-Just try refreshing.
+Just try refreshing a bunch of times.
 
-**I'm sure something will pop up eventually.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-deet
+I'm sure something will pop up eventually.
