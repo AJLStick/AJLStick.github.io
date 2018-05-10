@@ -47,7 +47,7 @@ function clickCounter() {
         } else {
             localStorage.clickcount = 1;
         }
-        document.getElementById("result").innerHTML = "You the button " + localStorage.clickcount + " times.";
+        document.getElementById("result").innerHTML = "You clicked the button " + localStorage.clickcount + " times.";
     } else {
         document.getElementById("result").innerHTML = "Your browser dosen't support... web storage???????";
     }
@@ -62,3 +62,15 @@ function clickCounter() {
 <p>The number won't go away.</p>
 </body>
 </html>
+
+<html>
+<body>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+What time is it?</button>
+
+<p id="demo"></p>
+
+</body>
+</html>      <o/
