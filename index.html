@@ -2,7 +2,7 @@
 <div class="rendered-form">
     
 <div class="fb-text form-group field-text">
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>By <span style="color: #0000ff;">AJLStick</span></strong></div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong> <span style="color: #0000ff;">         AJLStick</span></strong></div>
 <input id="text" class="form-control" maxlength="999" name="text" type="text" placeholder="Dont touch this box!" /></div>
 <div class="fb-checkbox-group form-group field-checkbox-group-1525882832582"><label class="fb-checkbox-group-label" for="checkbox-group-1525882832582"> </label>
 <div class="checkbox-group">
@@ -30,7 +30,6 @@
 <p>&nbsp;</p>
 <p>Don't mess anything up.</p>
 <p><button id="hide">Ok, I understand</button></p>  <form>  <button type="button" onclick="JavaScript:alert('Put that book down! Books are bad for your health!')">
-<img src="/pix/web_graphics/free_website_graphics/icons/books/book13.gif" alt="Read book" />
 <br />Read Book!</button>
 <input>
 <button type="reset">Destroy</button>
@@ -38,7 +37,15 @@
 <p>Type something and then click destroy.</p>
 <p>&nbsp;</p>
 <!-- "Show" button -->
-<p><button id="show">Display Fair Warning</button></p>        Toggle Color</p.
+<p><button id="show">Display Nothing</button></p>        Toggle Color</p>     
+
+<function> get_random_color() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+                          }</function>
 <!-- JavaScript to provide the "Show/Close" functionality -->
 <p>Go low</p>
 
@@ -93,6 +100,6 @@ What time is it?</button>
                 <p>                      </p>  
 
 
-Comments
+                                                         
 
 <form id="rendered-form"><div class="rendered-form"><input type="hidden" name="hidden-1525966048857" value="Dusty Button" id="hidden-1525966048857"><div class="fb-text form-group field-text-1525965923458"><label for="text-1525965923458" class="fb-text-label">Concerms? Just leave your email and i'll be sure to never get back to you.</label><input type="email" placeholder="here!" class="form-control" name="text-1525965923458" id="text-1525965923458"></div><div class="fb-button form-group field-button-1525965929702"><button type="button" class="btn btn-info" name="button-1525965929702" style="info" id="button-1525965929702">Submit</button></div></div></form>
