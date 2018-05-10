@@ -34,3 +34,31 @@
 <p><button id="show">Display Fair Warning</button></p>
 <!-- JavaScript to provide the "Show/Close" functionality -->
 <p>Go low</p>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You the button " + localStorage.clickcount + " times.";
+    } else {
+        document.getElementById("result").innerHTML = "Your browser dosen't support... web storage???????";
+    }
+}
+</script>
+</head>
+<body>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<p>Click the button again. I dare you.</p>
+<p>Fine. </p>
+<p>The number won't go away.</p>
+</body>
+</html>
