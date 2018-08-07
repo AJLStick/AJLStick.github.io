@@ -1,0 +1,33 @@
+<html>
+<body bgcolor="red">
+<center><h1 style="
+    margin-top: 300px;
+    margin-left: 500px;
+">                                                                                                                                                                                                                         </h1></center>
+
+
+
+<marquee id="dialog1" behavior="alternate">
+<p>&lt;&lt;&lt;   &lt;&lt;&lt;   &lt;&lt;&lt;   &lt;&lt;&lt;</p>
+
+</marquee>
+<!-- "Show" button -->
+<button id="show" style="
+    margin-left: 500px;
+    box-shadow: 1px 1px 1px 1px black;
+">YJR [SDDEPTF OD "sk;dyovl"</button>
+
+<!-- JavaScript to provide the "Show/Close" functionality -->
+<script type="text/JavaScript">
+(function() {  
+    var dialog1 = document.getElementById('dialog1');  
+    document.getElementById('show').onclick = function() {  
+        dialog1.show();  
+    };  
+    document.getElementById('hide').onclick = function() {  
+        dialog1.close();  
+    };  
+})(); 
+</script>
+<p>figure it out.
+    </p></body></html>
