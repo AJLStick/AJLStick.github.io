@@ -1,0 +1,180 @@
+
+:0->Xmin 
+:94->Xmax 
+:1->Ymin 
+:63->Ymax 
+:PlotsOff 
+:CoordOff 
+:AxesOff 
+:GridOff 
+:FnOff 
+:Lbl A 
+:0->B 
+:randInt(10,85)->C 
+:ClrDraw 
+:ClrHome 
+:Line(C,1,C+5,1 
+:Line(C+1,2,C+4,2 
+:For(A,1,500) 
+:End 
+:Lbl B 
+:ClrDraw 
+:Input "SHOT POWER=",S 
+:B+1->B 
+:(1/S)->S 
+:Line(C,1,C+5,1 
+:Line(C+1,2,C+4,2 
+:For(X,0,95,.25 
+:(-S(X^2)+63)->Y (Make this negative S. If you use a minus, you'll get a syntax error!!) 
+:Y->Z 
+:Pt-On(X,Y) 
+:If Z<0 or Z=0 
+:Goto C 
+:End 
+:Lbl C 
+:1->M 
+:If X>(C-1) and X<(C+6) 
+:Then 
+:2->M 
+:X->K 
+:Line(K,1,K-8,3 
+:Line(K,1,K+8,3 
+:Line(K,1,K-6,8 
+:Line(K,1,K+6,8 
+:Line(K,1,K-2,6 
+:Line(K,1,K+2,6 
+:End 
+:For(A,1,200) 
+:End 
+:If M=2 
+:Then 
+:ClrHome 
+:If B=1 
+:Then 
+:For(I,1,3) 
+:Output(4,4,"FIRST TRY!" 
+:For(A,1,100) 
+:End 
+:Output(4,4,"__________" (10 spaces) 
+:For(A,1,100) 
+:End 
+:End 
+:Output(4,4,"FIRST TRY!:" 
+:End 
+:If B>1 
+:Then 
+:Output(4,4,B 
+:Output(4,8,"SHOTS" 
+:End 
+:Pause 
+:ClrHome 
+:Goto D 
+:End 
+:ClrHome 
+:Disp "SHOOT AGAIN:" 
+:Goto B 
+:Lbl D 
+:ClrHome 
+:Menu("PLAY AGAIN?","YES",A,"NO",E 
+:Lbl E 
+:ClrHome 
+:Stop 
+
+
+--next--
+
+
+:Lbl 1 
+:ClrHome 
+:3->D 
+:Menu("PLINKO","PLAY",A,"Quit",B) 
+:Lbl B 
+:ClrHome 
+:Stop 
+:Lbl A 
+:If D=0 
+:Goto G 
+:If D<3 
+:Then 
+:Pause 
+:ClrHome 
+:End 
+:If D=3 
+:0->E 
+:For(U,2,6) 
+:Output(U,1,"]..............[") (14 decimal points) 
+:Output(7,1,"]12341911914321[") 
+:Output(8,15,E) 
+:If D=3 
+:Output(8,1,"***") 
+:If D=2 
+:Output(8,1,"**") 
+:If D=1 
+:Output(8,1,"*") 
+:2->A 
+:1->B 
+:Lbl C 
+:0->{0} 
+:Lbl D 
+:Output(B,A-1," ") 
+:Output(B,A,"*") 
+:Output(B,A+1," ") 
+:If B=7 
+:Then 
+:Output(6,1,"]..............[" (14 decimal points) 
+:Goto F 
+:End 
+:If {0}=0 
+:getKey->{0} 
+:While {0}=0
+:getKey->{0} 
+:End 
+:If {0}=24 and A>2 
+:A-1->A 
+:If {0}=26 and A<15 
+:A+1->A 
+:If {0}=34 
+:Then 
+:Output(B,A," ") 
+:Goto E 
+:End 
+:Goto C 
+:Lbl E 
+:If B/=1 and B/=2 
+:Output(B-1,2,"..............") (14 decimal points) 
+:If B/=7 
+:B+1->B 
+:Output(B,A,"*") 
+:If B=7 
+:Then 
+:Output(6,1,"]..............[") (14 decimal points) 
+:Goto F 
+:End 
+:randInt(0,1)->F 
+:If F=0 and A>2 
+:A-1->A 
+:If F=1 and A<15 
+:A+1->A 
+:Goto E 
+:Lbl F 
+:If A=2 or A=15 
+:E+1=E 
+:If A=3 or A=14 
+:E+2->E 
+:If A=4 or A=13 
+:E+3->E 
+:If A=5 or A=12 
+:E+4->E 
+:If A=6 or A=11 
+:E+1->E 
+:If A=7 or A=10 
+:E+9->E 
+:If A=8 or A=9 
+:E+1->E 
+:D-1->D 
+:Goto A 
+:Lbl G 
+:Output(8,15,E) 
+:Output(1,4,"GAME OVER") 
+:Pause 
+:Goto 1 
