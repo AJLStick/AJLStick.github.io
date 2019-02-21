@@ -1,0 +1,36 @@
+<html><head>
+<style type="text/css">
+body {
+background-color: #000;
+color: #fff;
+font-family:arial,helvetica;
+font-size:5em;
+text-align: center;
+}
+#main {
+margin: 0px auto;
+margin-top: 150px;
+width: 350px;
+text-align:center;
+}
+</style>
+<title>Has the Large Hadron Collider destroyed the world yet?</title>
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.hasthelargehadroncolliderdestroyedtheworldyet.com/atom.xml">
+</head>
+<body>
+<div id="main">
+<script type="text/javascript">
+if (!(typeof worldHasEnded == "undefined")) {
+document.write("YUP.");
+} else {
+document.write("NOPE.");
+}
+</script>NOPE.
+<noscript>NOPE.</noscript>
+</div>
+
+
+
+
+
+</body></html>
