@@ -1,0 +1,102 @@
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>HTML5 Chatroom</title>
+<meta name="keywords" content="html5">
+<meta name="description" content="A simple html5 Chatroom">
+<meta name="author" content="Wang">
+<meta name="viewport" content="width=1024">
+<style type="text/css">
+body{background-color:#fff;color:#444;font-size:14px;line-height:125%;}
+body,input,button,select,textarea{font-family:Verdana,"microsoft yahei",Arial,Helvetica,sans-serif;}
+body,dl,dt,dd,ol,ul,li,h1,h2,h3,h4,h5,h6,p,img{margin:0;padding:0;}
+img{border:0;vertical-align:bottom;}
+:focus{outline:0;}
+</style>
+<link rel="stylesheet" type="text/css" href="css/chatroom.css">
+</head>
+<body>
+<div>
+	<div id="chat-room">
+		<div id="chat-area" id="chat-area"></div>
+		<div class="chat-input">
+			<input type="text" id="chat-text" class="chat-text"><input type="button" value="发送" id="chat-send" class="chat-btn"><input type="button" value="位置" id="chat-place" class="chat-btn"><a class="chat-file-box" title="发送图片" href="javascript:;"><input type="button" value="图片" class="chat-btn"><input type="file" accept="image/*" id="chat-file"></a>
+		</div>
+		<div id="chat-input-mask"></div>
+		<div id="chat-user-list">
+			<div id="chat-sign-in">
+				<input id="chat-sign-in-btn" class="chat-btn" type="button" value="加入聊天">
+				<input id="chat-sign-out-btn" class="chat-btn" type="button" value="退出聊天">
+			</div>
+		</div>
+	</div>
+	<div style="color:#999;padding-top:20px;text-align:center;"><label for="chat-notify" id="chat-notify-label"><input type="checkbox" id="chat-notify">接收桌面通知</label></div>
+</div>
+<div id="chat-mask"></div>
+<div id="chat-sign-box">
+	<div class="chat-sign-con">
+		<div style="line-height:20px;text-indent:14px;">选择一个头像:</div>
+		<div class="chat-avatars">
+			<a href="javascript:;" class="checked">
+				<img src="avatars/maqing.jpg" width="60" height="60">
+				<span></span>
+			</a>
+			<a href="javascript:;">
+				<img src="avatars/stone.jpg" width="60" height="60">
+				<span></span>
+			</a>
+			<a href="javascript:;">
+				<img src="avatars/jay.jpg" width="60" height="60">
+				<span></span>
+			</a>
+		</div>
+		<div class="chat-avatars">
+			<a href="javascript:;">
+				<img src="avatars/meizhi.jpg" width="60" height="60">
+				<span></span>
+			</a>
+			<a href="javascript:;">
+				<img src="avatars/xiaoxin.jpg" width="60" height="60">
+				<span></span>
+			</a>
+			<a href="javascript:;">
+				<img src="avatars/fire.jpg" width="60" height="60">
+				<span></span>
+			</a>
+		</div>
+		<div style="line-height:43px;text-align:center;">
+			<label>昵称:</label><input id="chat-sign-name" class="chat-text" type="text"><br>
+			<input id="chat-sign-btn" class="chat-btn" type="button" value="加入聊天">
+		</div>
+		<a id="chat-sign-close" class="btn-close" href="javascript:;"></a>
+	</div>
+</div>
+<script type="text/javascript">
+// 请求动画帧
+(function(w){
+	w.requestAnimationFrame = w.requestAnimationFrame
+		|| w.webkitRequestAnimationFrame
+		|| w.msRequestAnimationFrame
+		|| w.mozRequestAnimationFrame
+		|| w.oRequestAnimationFrame
+		|| function(a) {
+			return setTimeout(a, 16);
+		};
+	w.cancelAnimationFrame = w.cancelAnimationFrame
+		|| w.webkitCancelAnimationFrame
+		|| w.msCancelAnimationFrame
+		|| w.mozCancelAnimationFrame
+		|| w.oCancelAnimationFrame
+		|| w.cancelRequestRequestAnimationFrame
+		|| w.webkitCancelRequestAnimationFrame
+		|| w.msCancelRequestAnimationFrame
+		|| w.mozCancelRequestAnimationFrame
+		|| w.oCancelRequestAnimationFrame
+		|| function(a) {
+			return clearTimeout(a);
+		};
+})(window);
+</script>
+<script type="text/javascript" src="examples/code-list/ws-chatroom.js"></script>
+</body>
+</html>
