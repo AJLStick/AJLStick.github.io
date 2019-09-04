@@ -1,3 +1,10 @@
+<?php
+if ($_COOKIE['iwashere'] != "yes") { 
+  setcookie("iwashere", "yes", time()+315360000);  
+  header("Location: http://example.com/index-first-time-visitor.php"); 
+}
+?>
+
 <html style="
     cursor: -webkit-grab;
 "><head>
