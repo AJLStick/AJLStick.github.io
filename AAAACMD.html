@@ -1,0 +1,8 @@
+<script type="text/javascript" language="javascript"> 
+  function pingItjs(ipAddress) {
+      var oShell = new ActiveXObject("wscript.shell"); 
+      oShell.Run("cmd.exe /k ping" + ipAddress); 
+  }
+</script>
+calling it with:
+<a href="javascript:pingItjs('172.17.100.3')">ping</a>
