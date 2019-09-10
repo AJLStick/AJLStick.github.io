@@ -1,5 +1,24 @@
 <div style="display:none;">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <script>
+      function disableClick(){
+        document.onclick=function(event){
+          if (event.button == 2) {
+            alert('NO.');
+            return false;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body onLoad="disableClick()">
+  </body>
+</html>
+  
+  
+  
+  <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>STOP RIGHT THERE!</title>
