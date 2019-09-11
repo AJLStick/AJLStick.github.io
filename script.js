@@ -1,99 +1,145 @@
-const { Application, Graphics } = PIXI
-// App constraints
-const UPPER_LIMIT_Y = 10
-const UPPER_LIMIT_X = 2
-const LOWER_LIMIT_X = -2
-const MAX_SIZE = 6
-const MIN_SIZE = 2
-const AMOUNT = 1000
-const COLOR = 0xffffff
+/*################################################################################
+##################################################################################
+##########                                                             ###########
+##########                                                             ###########
+##########        Windows Template by                                  ###########
+##########            https://html5-templates.com/                      ###########
+##########                                                             ###########
+##########        All rights reserved.                                 ###########
+##########                                                             ###########
+##################################################################################
+################################################################################*/
 
-const getRandomColor = () =>
-  [0xf22613, 0xf9690e, 0xf9bf3b, 0x2ecc71, 0x19b5fe, 0x663399, 0x947cb0][
-    Math.floor(Math.random() * 7)
-  ]
-const floored = v => Math.floor(Math.random() * v)
-// Update value by either subtracting to adding
-const update = p =>
-  Math.random() > 0.5
-    ? Math.max(LOWER_LIMIT_X, p - 1)
-    : Math.min(p + 1, UPPER_LIMIT_X)
-// Reset particle start points based on screen
-const reset = p => {
-  p.x = floored(app.renderer.width)
-  p.y = -(p.size + floored(app.renderer.height))
-  p.vy = floored(UPPER_LIMIT_Y) + 2
+var i = 0,
+minimizedWidth = new Array,
+minimizedHeight = new Array,
+windowTopPos = new Array,
+windowLeftPos = new Array,
+panel,
+id;
+
+function adjustFullScreenSize() {
+	$(".fullSizeWindow .wincontent").css("width", (window.innerWidth - 32));
+	$(".fullSizeWindow .wincontent").css("height", (window.innerHeight - 98));
 }
-// Generate a particle set based on a given texture
-const genParticles = (t) =>
-  new Array(AMOUNT).fill().map(p => {
-    const SIZE = floored(MAX_SIZE) + MIN_SIZE
-    p = new PIXI.Sprite(t)
-    p.size = SIZE
-    p.vx = floored(UPPER_LIMIT_X) - UPPER_LIMIT_X
-    p.vy = floored(UPPER_LIMIT_Y) + 2
-    p.alpha = Math.random()
-    p.x = p.startX = floored(app.renderer.width)
-    p.y = p.startY = -(SIZE + floored(app.renderer.height))
-    p.width = p.height = SIZE
-    // p.scale.x = 5
-    p.tint = getRandomColor()
-    drops.addChild(p)
-    return p
-  })
+function makeWindowActive(thisid) {
+	$(".window").each(function() {      
+		$(this).css('z-index', $(this).css('z-index') - 1);
+	});
+	$("#window" + thisid).css('z-index',1000);
+	$(".window").removeClass("activeWindow");
+	$("#window" + thisid).addClass("activeWindow");
+	
+	$(".taskbarPanel").removeClass('activeTab');
+	
+	$("#minimPanel" + thisid).addClass("activeTab");
+}
 
+function minimizeWindow(id){
+	windowTopPos[id] = $("#window" + id).css("top");
+	windowLeftPos[id] = $("#window" + id).css("left");
+	
+	$("#window" + id).animate({
+		top: 800,
+		left: 0
+	}, 200, function() {		//animation complete
+		$("#window" + id).addClass('minimizedWindow');
+		$("#minimPanel" + id).addClass('minimizedTab');
+		$("#minimPanel" + id).removeClass('activeTab');
+	});	
+}
 
-// Create app instance
-const app = new Application({
-  antialias: true,
-  transparent: true,
-})
+function openWindow(id) {
+	if ($('#window' + id).hasClass("minimizedWindow")) {
+		openMinimized(id);
+	} else {	
+		makeWindowActive(id);
+		$("#window" + id).removeClass("closed");
+		$("#minimPanel" + id).removeClass("closed");
+	}
+}
+function closeWindwow(id) {
+	$("#window" + id).addClass("closed");
+	$("#minimPanel" + id).addClass("closed");
+}
 
-// Create particle container
-const drops = new PIXI.particles.ParticleContainer(AMOUNT, {
-  scale: true,
-  position: true,
-  rotation: true,
-  alpha: true,
-})
-// Add container to app stage
-app.stage.addChild(drops)
-// Create a base graphic for our sprites
-const p = new Graphics()
-p.beginFill(COLOR)
-p.drawCircle(0, 0, 100)
-p.endFill()
-// Generate a base texture from the base graphic
-const baseTexture = app.renderer.generateTexture(p)
-let particles = genParticles(baseTexture)
-app.ticker.add(i => {
-  if (
-    app.renderer.height !== innerHeight ||
-    app.renderer.width !== innerWidth
-  ) {
-    app.renderer.resize(innerWidth, innerHeight)
-    drops.removeChildren()
-    particles = genParticles(baseTexture)
-  }
-  for (let particle of particles) {
-    if (particle.y > 0) particle.x += particle.vx
-    particle.y += particle.vy
+function openMinimized(id) {
+	$('#window' + id).removeClass("minimizedWindow");
+	$('#minimPanel' + id).removeClass("minimizedTab");
+	makeWindowActive(id);
+		
+	$('#window' + id).animate({
+		top: windowTopPos[id],
+		left: windowLeftPos[id]
+	}, 200, function() {
+	});				
+}
 
-    if (Math.random() > 0.9) particle.vx = update(particle.vx)
-    // if (Math.random() > 0.9) particle.vy = Math.min(particle.vy + 1, UPPER_LIMIT_Y)
-    if (
-      particle.x > app.renderer.width ||
-      particle.x < 0 ||
-      particle.y > app.renderer.height
-    )
-      reset(particle)
-  }
-  app.renderer.render(drops)
-})
-document.body.appendChild(app.view)
+$(document).ready(function(){
+	$(".window").each(function() {      		// window template
+		$(this).css('z-index',1000)
+		$(this).attr('data-id', i);
+		minimizedWidth[i] = $(this).width();
+		minimizedHeight[i] = $(this).height();
+		windowTopPos[i] = $(this).css("top");
+		windowLeftPos[i] = $(this).css("left");
+		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + $(this).attr("data-title") + '</div>');
+		if ($(this).hasClass("closed")) {	$("#minimPanel" + i).addClass('closed');	}		
+		$(this).attr('id', 'window' + (i++));
+		$(this).wrapInner('<div class="wincontent"></div>');
+		$(this).prepend('<div class="windowHeader"><strong>' + $(this).attr("data-title") + '</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div>');
+	});
+	
+	$("#minimPanel" + (i-1)).addClass('activeTab');
+	$("#window" + (i-1)).addClass('activeWindow');
+	
+	$( ".wincontent" ).resizable();			// resizable
+	$( ".window" ).draggable({ cancel: ".wincontent" });	// draggable
+	
 
-// Hook up blur modifier
-const input = document.querySelector('input')
-input.addEventListener('change', e => {
-  document.documentElement.style.setProperty('--blur', e.target.value)
-})
+    $(".window").mousedown(function(){		// active window on top (z-index 1000)
+		makeWindowActive($(this).attr("data-id"));
+    });
+	
+    $(".winclose").click(function(){		// close window
+		closeWindwow($(this).parent().parent().attr("data-id"));
+    });	
+
+    $(".winminimize").click(function(){		// minimize window
+		minimizeWindow($(this).parent().parent().attr("data-id"));
+    });	
+	
+    $(".taskbarPanel").click(function(){		// taskbar click
+		id = $(this).attr("data-id");
+		if ($(this).hasClass("activeTab")) {	// minimize if active
+			minimizeWindow($(this).attr("data-id"));
+		} else {
+			if ($(this).hasClass("minimizedTab")) {	// open if minimized
+				openMinimized(id);
+			} else {								// activate if inactive
+				makeWindowActive(id);
+			}
+		}
+    });	
+	
+    $(".openWindow").click(function(){		// open closed window
+		openWindow($(this).attr("data-id"));
+    });
+	
+    $(".winmaximize").click(function(){
+		if ($(this).parent().parent().hasClass('fullSizeWindow')) {			// minimize
+			
+			$(this).parent().parent().removeClass('fullSizeWindow');
+			$(this).parent().parent().children(".wincontent").height(minimizedHeight[$(this).parent().parent().attr("data-id")]);	
+			$(this).parent().parent().children(".wincontent").width(minimizedWidth[$(this).parent().parent().attr("data-id")]);
+		} else {															// maximize
+			$(this).parent().parent().addClass('fullSizeWindow');
+			
+			minimizedHeight[$(this).parent().parent().attr('data-id')] = $(this).parent().parent().children(".wincontent").height();
+			minimizedWidth[$(this).parent().parent().attr('data-id')] = $(this).parent().parent().children(".wincontent").width();
+			
+			adjustFullScreenSize();
+		}
+    });		
+	adjustFullScreenSize();	
+});
