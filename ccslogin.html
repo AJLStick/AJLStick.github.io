@@ -1,0 +1,146 @@
+<head><title>
+	Cumberland County Schools - Single Sign On for G Suite
+</title><link href="sheet.css" type="text/css" rel="stylesheet" /></head>
+
+<center>
+
+<body>
+    <form method="post" action="Login.aspx?ReturnUrl=%2fLoginFormIdentityProvider%2fDefault.aspx" onsubmit="javascript:return WebForm_OnSubmit();" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'LoginButton')" id="loginForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk5NjM5MTczMg9kFgICAw9kFgICCQ9kFgICAQ9kFgICAQ8QZGQWAWZkZMbA8JDLumcrnP5EzIBtZ8/tG7VwT34U3SbqdDezERAQ" />
+</div>
+
+
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="89F0D0DF" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBALx0PbkBgKvruq2CALSxeCRDwL+jNCfD/FT2vJU1Z/W9DFVivMWZb0JipGQYYfYIp73B53b2JD2" />
+</div>
+    <div id="container" class="">    
+    <div class="login">
+    <h2>Cumberland County Schools Login for G Suite</h2>
+    <p>
+        Please enter your Username and Password
+    </p>
+    
+    
+    <span class="failureNotification">
+        
+    </span>
+    <div id="LoginUserValidationSummary" class="failureNotification" style="display:none;">
+
+</div>
+    <div class="accountInfo">
+        <table border="0" cellpadding="2">
+            
+            <tr>
+                <td>
+                    <p>
+                        <label for="UserName" id="UserNameLabel">Username:</label>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <input name="UserName" type="text" id="UserName" class="userName" />
+                        <span id="UserNameRequired" title="Username is required." class="failureNotification" style="visibility:hidden;">*</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <label for="Password" id="PasswordLabel">Password:</label>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <input name="Password" type="password" id="Password" class="password" />
+                        <span id="PasswordRequired" title="Password is required." class="failureNotification" style="visibility:hidden;">*</span>
+                    </p>
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td align="right" colspan="2">
+                    <p class="submitButton">
+                        <input type="submit" name="LoginButton" value="Login" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;LoginButton&quot;, &quot;&quot;, true, &quot;LoginUserValidationGroup&quot;, &quot;&quot;, false, false))" id="LoginButton" />
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    </div>
+    </div>    
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("LoginUserValidationSummary"));
+var Page_Validators =  new Array(document.getElementById("UserNameRequired"), document.getElementById("PasswordRequired"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var LoginUserValidationSummary = document.all ? document.all["LoginUserValidationSummary"] : document.getElementById("LoginUserValidationSummary");
+LoginUserValidationSummary.validationGroup = "LoginUserValidationGroup";
+var UserNameRequired = document.all ? document.all["UserNameRequired"] : document.getElementById("UserNameRequired");
+UserNameRequired.controltovalidate = "UserName";
+UserNameRequired.errormessage = "Username is required.";
+UserNameRequired.validationGroup = "LoginUserValidationGroup";
+UserNameRequired.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+UserNameRequired.initialvalue = "";
+var PasswordRequired = document.all ? document.all["PasswordRequired"] : document.getElementById("PasswordRequired");
+PasswordRequired.controltovalidate = "Password";
+PasswordRequired.errormessage = "Password is required.";
+PasswordRequired.validationGroup = "LoginUserValidationGroup";
+PasswordRequired.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+PasswordRequired.initialvalue = "";
+//]]>
+</script>
+
+
+</form>
+    
+<div id="infotext" class="">
+    	    <br>
+  	    
+
+
+
+
+<p><font color="red">*</font>Cumberland County Schools will <strong>NEVER</strong> request passwords through e-mail<font color="red">*</font></p>
+<br>
+
+<p>Assistance with G Suite for Education can be found below:
+
+<br><br>
+
+<a href="#" target="_blank">Gmail Help</a> &nbsp;&nbsp; | &nbsp;&nbsp;
+
+
+<a href="#" target="_blank">Google Drive Help</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://support.google.com/a/users#topic=9296556" target="_blank">G Suite Learning Center</a> 
+
+<br><br>
+
+<a href="#" target="_blank">Setup G Suite on Your Mobile Device</a>
+
+</p>
+
+<br>
+
+
+<img src="center.png" alt="Cumberland County Schools">
+
+    </div>
+
+</center>
+    
+</body>
+</html>

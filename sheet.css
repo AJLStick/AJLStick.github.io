@@ -1,0 +1,126 @@
+body 
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 80%;
+	margin: 0px;
+}
+
+h1
+{
+	margin: 0px 0px 8px 0px;
+	padding: 0;
+	font-size: 125%;
+}
+
+h2
+{
+	margin: 0px 0px 8px 0px;
+	padding: 0;
+	font-size: 100%;
+}
+
+p
+{
+	margin: 0px 0px 8px 0px;
+	padding: 0;
+}
+
+.login
+{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background: none;
+    border: none;
+    padding: none;
+    color: #ffffff
+}
+
+.userName
+{
+    width: 180px;
+}
+
+.password
+{
+    width: 180px;
+}
+
+#LoginUser_DomainDropDownList
+{
+    width: 180px;
+}
+
+.submitButton
+{
+    margin-right: 14px;
+}
+
+.changePassword
+{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background: silver;
+    border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+}
+
+.logout
+{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background: silver;
+    border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+}
+
+.error
+{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background: silver;
+    border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+}
+
+.failureNotification
+{
+    color: Red;
+}
+
+#logo  /* This layer holds the CCS logo */
+{
+    width: 250px;
+    height: 100px;
+    padding-top:  20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#container   /* blue band */
+{
+    margin-top:  10px;
+    padding-top:  10px;
+    padding-bottom:  10px;
+    width: 100%;
+    height:  200px;
+    background: #0054A6;
+
+}
+
+#infotext 
+{
+    width: 600px;
+    padding-top:  10px;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: visible;
+}
