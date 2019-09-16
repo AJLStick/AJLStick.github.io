@@ -1,27 +1,26 @@
-<html><head>
-
-
-	
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>BOXHEAD</title>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Fixed Width 2 Blue</title>
 		<style type="text/css">
 			html, #page { padding:0; margin:0;}
 			body { margin:0; padding:0; width:100%; color:#959595; font:normal 12px/2.0em Sans-Serif;} 
 			h1, h2, h3, h4, h5, h6 {color:darkblue;}
-			#page { background:#fff;}
+			#page { background:#eee;}
 			#header, #footer, #top-nav, #content, #content #contentbar, #content #sidebar { margin:0; padding:0;}
 						
 			/* Logo */
-			#logo { padding:0; width:auto; float:left;}
+			#logo { padding:10px; width:auto; float:left;}
 			#logo h1 a, h1 a:hover { color:darkblue; text-decoration:none;}
 			#logo h1 span { color:#d3d3f9;}
+
 			/* Header */
-			#header { background:#fff; }
-			#header-inner { margin:0 auto; padding:0; width:970px;}
+			#header { background:#eee; }
+			#header-inner { margin:0 auto; padding:10px; width:970px;background:#fff;}
 			
 			/* Feature */
-			.feature { background:blue;padding:18px;}
-			.feature-inner { margin:auto;width:970px; }
+			.feature { background:#eee;padding:0;}
+			.feature-inner { margin:auto;padding:10px;width:970px;background:blue; }
 			.feature-inner h1 {color:#d3d3f9;font-size:32px;}
 			
 			/* Menu */
@@ -32,7 +31,7 @@
 			#top-nav ul li.active a, #top-nav ul li a:hover { color:#d3d3f9;}
 			
 			/* Content */
-			#content-inner { margin:0 auto; padding:10px 0; width:970px;background:#fff;}
+			#content-inner { margin:0 auto; padding:10px; width:970px;background:#fff;}
 			#content #contentbar { margin:0; padding:0; float:right; width:760px;}
 			#content #contentbar .article { margin:0 0 24px; padding:0 20px 0 15px; }
 			#content #sidebar { padding:0; float:left; width:200px;}
@@ -45,26 +44,36 @@
 			#content #sidebar .widget ul li a:hover { color:#d3d3f9; font-weight:bold; text-decoration:none;}
 			
 			/* Footerblurb */
-			#footerblurb { background:#d3d3f9;color:blue;}
-			#footerblurb-inner { margin:0 auto; width:922px; padding:24px;}
+			#footerblurb { background:#eee;color:blue;}
+			#footerblurb-inner { margin:0 auto; width:970px; padding:10px;background:#d3d3f9;border-bottom-right-radius:15px;border-bottom-left-radius:15px;}
 			#footerblurb .column { margin:0; text-align:justify; float:left;width:250px;padding:0 24px;}
 			
 			/* Footer */
-			#footer { background:#fff;}
-			#footer-inner { margin:auto; text-align:center; padding:12px; width:922px;}
+			#footer { background:#eee;}
+			#footer-inner { margin:auto; text-align:center; padding:12px; width:970px;}
 			#footer a {color:blue;text-decoration:none;}
 			
 			/* Clear both sides to assist with div alignment  */
 			.clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
 		</style>
-		<script type="text/javascript"></script>
+		<script type="text/javascript">
+			/* =============================
+			This script generates sample text for the body content. 
+			You can remove this script and any reference to it. 
+			 ============================= */
+			var bodyText=["The smaller your reality, the more convinced you are that you know everything.", "If the facts don't fit the theory, change the facts.", "The past has no power over the present moment.", "This, too, will pass.", "</p><p>You will not be punished for your anger, you will be punished by your anger.", "Peace comes from within. Do not seek it without.", "<h2>Heading</h2><p>The most important moment of your life is now. The most important person in your life is the one you are with now, and the most important activity in your life is the one you are involved with now."]
+			function generateText(sentenceCount){
+				for (var i=0; i<sentenceCount; i++)
+				document.write(bodyText[Math.floor(Math.random()*7)]+" ")
+			}
+		</script>
 	</head>
 	<body>
 		<div id="page">
 			<header id="header">
 				<div id="header-inner">	
 					<div id="logo">
-						<h1><a href="https://ajlstick.github.io/games">AJLStick's<span> Unblocked Games</span></a></h1>
+						<h1><a href="#">Cool<span>Logo</span></a></h1>
 					</div>
 					<div id="top-nav">
 						<ul>
@@ -79,47 +88,33 @@
 			</header>
 			<div class="feature">
 				<div class="feature-inner">
-				<h1>BOXHEAD 2PLAY ROOMS</h1>
+				<h1>Heading</h1>
 				</div>
 			</div>
 		
 	
 			<div id="content">
-				<div id="content-inner" style="
-    margin-left: 20px;
-">
+				<div id="content-inner">
 				
 					<main id="contentbar">
-						<div class="article" style="
-    margin-left: 420px;
-    width: 600px;
-">
-							<h2>HOW TO PLAY</h2><p></p><pre>P1: MOVE WITH ↑ → ← ↓
-P2: MOVE WITH W A S D
-------
-Shoot:
-Player 1: (Single Player) Space
-Player 1: (Multi Player): /
-Player 2: Space
-------
-WEAPONS:
-Single Player: 0 through 9
-Player 1 (Multi Player): . and , keys
-Player 2: Q and E
-------
-Objective
-Kill or be killed. Collect as many weapons and powerups along the way and always, always keep that multiplier up!
-------
-Getting more guns
-You earn more weapons, or upgrades for your current weapons by increasing your multiplier. Every kill will increase it by 1. The multiplier will go back down over time, and this speeds up depending on how high your multiplier is.<p></p></pre><script type="text/javascript">
+						<div class="article">
+							<p><script>generateText(12)</script></p>
 						</div>
 					</main>
 					
-				<embed src="boxhead.swf" style="
-    width: 640px;
-    height: 480px;
-">
-						
+					<nav id="sidebar">
+						<div class="widget">
+							<h3>Left heading</h3>
+							<ul>
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+							<li><a href="#">Link 4</a></li>
+							<li><a href="#">Link 5</a></li>
+							</ul>
+						</div>
+					</nav>
+					
 					<div class="clr"></div>
 				</div>
 			</div>
@@ -128,23 +123,27 @@ You earn more weapons, or upgrades for your current weapons by increasing your m
 				<div id="footerblurb-inner">
 				
 					<div class="column">
-						<h2></h2>
-						<p></p>
+						<h2><span>Heading</span></h2>
+						<p><script>generateText(2)</script></p>
 					</div>	
-					
-						
+					<div class="column">
+						<h2><span>Heading</span></h2>
+						<p><script>generateText(2)</script></p>
+					</div>
+					<div class="column">
+						<h2><span>Heading</span></h2>
+						<p><script>generateText(2)</script></p>
+					</div>	
 					
 					<div class="clr"></div>
 				</div>
 			</div>
 			<footer id="footer">
 				<div id="footer-inner">
-					<p>© Copyright <a href="#">AJLStick</a> | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+					<p>&copy; Copyright <a href="#">Your Site</a> &#124; <a href="#">Terms of Use</a> &#124; <a href="#">Privacy Policy</a></p>
 					<div class="clr"></div>
 				</div>
 			</footer>
 		</div>
-	
- 
-</body></html>
-</script></div></main></div></div></div></body></html>
+	</body>
+</html>
