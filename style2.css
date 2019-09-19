@@ -1,5 +1,11 @@
 body {
-	zoom: 100%;
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: black;
+  padding: 10px;
+}
+  zoom: 90%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #c8c8c8;
@@ -80,11 +86,11 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea {
 	margin: 0px;
 }
 a {
-	color: #70e7ff;
-	text-decoration: underline;
+	color: #000000;
+	text-decoration: none;
 }
 a:hover {
-	text-decoration: none;
+	text-decoration: underline;
 }
 .main {
 	width: 989px;
