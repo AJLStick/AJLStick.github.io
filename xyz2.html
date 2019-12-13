@@ -1,0 +1,28 @@
+<style>
+html { background-color:black;
+color:green;
+}
+a { color:white;
+</style>
+<html>
+<body>
+<pre>
+<a href="#" onclick="typeWriter()">II</a>
+<p id="demo"></p>
+<script>
+var i = 0;
+var txt = 'however, i am not permitted to just GIVE you the password.            i must make you think.';
+var speed = 100;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+<a href="xyz3">continue<a>
+</body>
+</html>
+
