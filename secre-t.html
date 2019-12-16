@@ -1,27 +1,31 @@
 <style>
-html { background-color:black;
-color:green;
+.secret {
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   color: #FFFFFF;
+   font-family: Open Sans;
+   font-size: 18px;
+   font-weight: 600;
+   padding: 17px;
+   background-color: #797979;
+   box-shadow: 1px 1px 0px 0px #000000;
+   -webkit-box-shadow: 1px 1px 0px 0px #000000;
+   -moz-box-shadow: 1px 1px 0px 0px #000000;
+   text-shadow: 4px 4px 3px #000000;
+   border: solid #000000 2px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
 }
-a { color:white;
+
+.secret:hover {
+   background: #B6B6B6;
+   border: outset #000000 2px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   text-decoration: none;
+}
 </style>
-<html>
-<body>
-<pre>
-<a href="#" onclick="typeWriter()">-</a>
-<p id="demo"></p>
-<script>
-var i = 0;
-var txt = 'is that what you want?                 okay.                          i understand.      but before i show you, you should know that it will change your life. forever.             you still want to see it?                of course.           as you wish.';
-var speed = 100;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-</script>
-
-</body>
-</html>
+<a href="#" class="secret">asas</a>
