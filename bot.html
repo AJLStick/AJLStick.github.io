@@ -39,5 +39,11 @@ sock.on('message', function(data){
         if(data.msg.startsWith('^color r')){
        sock.emit('message', "/color red")
     }
+       if(data.msg.startsWith('69')){
+       sock.emit('message', 'nice')
+    }
+    if(data.msg.startsWith('')){
+       sock.emit('message', 'nice')
+    }
 
 })
