@@ -45,5 +45,9 @@ sock.on('message', function(data){
     if(data.msg.startsWith('/sin off')){
        sock.emit('message', 'good job')
     }
+        if(data.msg.startsWith('#stillalive')){
+       sock.emit('message', 'WHY?! WHY WOULD YOU DO THIS, YOU ABSOLUTELY DISGUSTING PIECE OF HUMAN TRASH?!?!')
+    }
+    
 
 })
