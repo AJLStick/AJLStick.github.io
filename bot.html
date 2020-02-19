@@ -1,0 +1,37 @@
+const socket = require("socket.io-client")("http://windows93.net:8081");
+const io = require('socket.io-client');
+ 
+const sock = io("http://www.windows93.net:8081", {
+  path: '/socket.io',
+  transportOptions: {
+    polling: {
+      extraHeaders: {
+        "Origin": "http://www.windows93.net",
+        "Referer": "http://www.windows93.net/trollbox/index.php"
+      }
+    }
+  }
+})
+ 
+sock.on('connect', function(){
+    sock.emit("user joined", "Krinn [^help]", "blue");
+})
+ 
+sock.on('message', function(data){
+    if(data.msg.startsWith('^help')){
+       sock.emit('message', 'HELP PAGE!!!!1!!1! // ^ins - insults someone  //  ^comp - compliments someone  //  ^creator - you know what this does.  //  ^cre - :}')
+    }
+    if(data.msg.startsWith('^comp')){
+       sock.emit('message', 'you (dont) suck e g g s')
+    }
+    if(data.msg.startsWith('^ins')){
+       sock.emit('message', 'you suck  e g g s')
+    }
+    if(data.msg.startsWith('^creator')){
+       sock.emit('message', 'AJLStick, or course! https://AJLStick.us')
+    }
+if(data.msg.startsWith('^cre')){
+       sock.emit('message', ':}')
+    }
+
+})
