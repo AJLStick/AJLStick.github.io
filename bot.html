@@ -19,7 +19,7 @@ sock.on('connect', function(){
  
 sock.on('message', function(data){
     if(data.msg.startsWith('^help')){
-       sock.emit('message', 'HELP PAGE!!!!1!!1! // ^ins - insults someone  //  ^comp - compliments someone  //  ^creator - you know what this does.  //  ^cre - :}')
+       sock.emit('message', 'HELP PAGE!!!!1!!1! // ^ins - insults someone  //  ^comp - compliments someone  //  ^creator - you know what this does.  //  ^cre - :}  //  ^rpg - links to The RPG.  //  ^color r - turns me red  //  ^color b - turns me blue')
     }
     if(data.msg.startsWith('^comp')){
        sock.emit('message', 'you (dont) suck e g g s')
@@ -27,11 +27,17 @@ sock.on('message', function(data){
     if(data.msg.startsWith('^ins')){
        sock.emit('message', 'you suck  e g g s')
     }
-    if(data.msg.startsWith('^creator')){
-       sock.emit('message', 'AJLStick, or course! https://AJLStick.us')
+         if(data.msg.startsWith('^rpg')){
+       sock.emit('message', 'ajlstick.github.io/therpg')
+    } 
+        if(data.msg.startsWith('^rpg')){
+       sock.emit('message', 'you mean this? https://ajlstick.github.io/therpg')
     }
-if(data.msg.startsWith('^cre')){
-       sock.emit('message', ':}')
+        if(data.msg.startsWith('^color b')){
+       sock.emit('message', '/color blue')
+    }
+        if(data.msg.startsWith('^color r')){
+       sock.emit('message', '/color red')
     }
 
 })
