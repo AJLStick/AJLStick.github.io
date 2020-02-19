@@ -1,13 +1,13 @@
-const socket = require("socket.io-client")("http://local93.darkok.xyz:8082/");
+const socket = require("socket.io-client")("https://windows93.net:8082/");
 const io = require('socket.io-client');
  
-const sock = io("http://local93.darkok.xyz:8082/", {
+const sock = io("http://www.windows93.net/trollbox//", {
   path: '/socket.io',
   transportOptions: {
     polling: {
       extraHeaders: {
-        "Origin": "http://local93.darkok.xyz:8082/",
-        "Referer": "http://local93.darkok.xyz:8082/"
+        "Origin": "http://www.windows93.net/trollbox/",
+        "Referer": "http://www.windows93.net/trollbox/"
       }
     }
   }
@@ -19,7 +19,7 @@ sock.on('connect', function(){
  
 sock.on('message', function(data){
     if(data.msg.startsWith('^help')){
-       sock.emit('message', 'HELP PAGE!!!!1!!1! prefix:"^" // rpg // comp // ins // creator // creep // ajl // die // ban // secret // meme // and other secret commands!!!!!!!!1!')
+       sock.emit('message', 'HELP PAGE!!!!1!!1! prefix:"^" // rpg // comp // ins // creator // creep // ajl // die // ban // secret // meme // 1ball // 0ball // and other secret commands!!!!!!!!1!')
     }
     if(data.msg.startsWith('^comp')){
        sock.emit('message', 'you (dont) suck e g g s')
@@ -60,6 +60,20 @@ sock.on('message', function(data){
         if(data.msg.startsWith('#stillalive')){
        sock.emit('message', 'WHY?! WHY WOULD YOU DO THIS, YOU ABSOLUTELY DISGUSTING PIECE OF HUMAN TRASH?!?!')
     }
+        if(data.msg.endsWith("stickbug")){
+       sock.emit('message', 'stfu kermit')
+    }
+       if(data.msg.startsWith("stickbug")){
+       sock.emit('message', 'stfu kermit')
+    }
+       if(data.msg.startsWith("^1ball")){
+       sock.emit('message', 'yes.')
+    }
+      if(data.msg.startsWith("^0ball")){
+       sock.emit('message', 'i didnt hear you. could you say that again?')
+    }
+    
+    
     
     
 
