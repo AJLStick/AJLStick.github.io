@@ -1,3 +1,4 @@
+<pre>
 const socket = require("socket.io-client")("http://windows93.net:8081");
 const io = require('socket.io-client');
  
@@ -5,7 +6,8 @@ const sock = io("http://www.windows93.net:8081", {
   path: '/socket.io',
   transportOptions: {
     polling: {
-      extraHeaders: {
+      extraHeaders: <pre>
+      {
         "Origin": "http://www.windows93.net",
         "Referer": "http://www.windows93.net/trollbox/index.php"
       }
