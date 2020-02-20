@@ -1,82 +1,107 @@
 <pre>
 const socket = require("socket.io-client")("http://windows93.net:8081");
 const io = require('socket.io-client');
- 
 const sock = io("http://www.windows93.net:8081", {
-  path: '/socket.io',
-  transportOptions: {
-    polling: {
-      extraHeaders: <pre>
-      {
-        "Origin": "http://www.windows93.net",
-        "Referer": "http://www.windows93.net/trollbox/index.php"
-      }
-    }
-  }
+path: '/socket.io',
+transportOptions: {
+polling: {
+extraHeaders: {
+"Origin": "http://www.windows93.net",
+"Referer": "http://www.windows93.net/trollbox/index.php"
+}
+}
+}
 })
- 
 sock.on('connect', function(){
-    sock.emit("user joined", "Krinn [^help]", "blue");
+sock.emit("user joined", "Krinn [^help]", "white");
 })
- 
 sock.on('message', function(data){
-    if(data.msg.startsWith('^help')){
-       sock.emit('message', 'HELP PAGE!!!!1!!1! prefix:"^" // rpg // comp // ins // creator // creep // ajl // die // ban // secret // meme // 1ball // 0ball // and other secret commands!!!!!!!!1!')
-    }
-    if(data.msg.startsWith('^comp')){
-       sock.emit('message', 'you (dont) suck e g g s')
-    }
-    if(data.msg.startsWith('^ins')){
-       sock.emit('message', 'you suck  e g g s')
-    }
-         if(data.msg.startsWith('^creep')){
-       sock.emit('message', ':}')
-    } 
-        if(data.msg.startsWith('^rpg')){
-       sock.emit('message', 'you mean this? https://ajlstick.github.io/therpg')
-    }
-        if(data.msg.startsWith('^secret')){
-       sock.emit('message', '[1 5 2 3 4]')
-    }
-        if(data.msg.startsWith('^meme')){
-       sock.emit('message', 'https://imgur.com/a/fbAievW')
-    }
-        if(data.msg.startsWith('^ajl')){
-       sock.emit('message', "/color blue")
-    }
-        if(data.msg.startsWith('^die')){
-       sock.emit('message', "no u")
-    }
-       if(data.msg.startsWith('69')){
-       sock.emit('message', 'nice')
-    }
-      if(data.msg.startsWith('^kick')){
-       sock.emit('message', 'what?')
-    }
-      if(data.msg.startsWith('^ban')){
-       sock.emit('message', 'excuse me? ban?????')
-    }
-    if(data.msg.startsWith('sin')){
-       sock.emit('message', 'good job')
-    }
-        if(data.msg.startsWith('#stillalive')){
-       sock.emit('message', 'WHY?! WHY WOULD YOU DO THIS, YOU ABSOLUTELY DISGUSTING PIECE OF HUMAN TRASH?!?!')
-    }
-        if(data.msg.endsWith("stickbug")){
-       sock.emit('message', 'stfu kermit')
-    }
-       if(data.msg.startsWith("stickbug")){
-       sock.emit('message', 'stfu kermit')
-    }
-       if(data.msg.startsWith("^1ball")){
-       sock.emit('message', 'yes.')
-    }
-      if(data.msg.startsWith("^0ball")){
-       sock.emit('message', 'i didnt hear you. could you say that again?')
-    }
-    
-    
-    
-    
+if(data.msg.startsWith('^help')){
+sock.emit('message', 'HELP PAGE!!!!1!!1! prefix: " ^ " // rpg // comp // ins // creator // creep // ajl // die // ban // secret // meme // 1ball // 0ball // morty // kill // disconnect // respeccs // roll // spam // yeet//  // and other secret commands!!!!!!!!1!')
+}
+if(data.msg.startsWith('^comp')){
+sock.emit('message', 'you (dont) suck e g g s')
+}
+if(data.msg.startsWith('^ins')){
+sock.emit('message', 'you suck e g g s')
+}
+if(data.msg.startsWith('^creep')){
+sock.emit('message', ':}')
+}
+if(data.msg.startsWith('^rpg')){
+sock.emit('message', 'you mean this? https://ajlstick.github.io/therpg')
+}
+if(data.msg.startsWith('^secret')){
+sock.emit('message', '[1 5 2 3 4]')
+}
+if(data.msg.startsWith('^meme')){
+sock.emit('message', 'https://imgur.com/a/fbAievW')
+}
+if(data.msg.startsWith('^ajl')){
+sock.emit('message', "AJLStick! https://ajlstick.us")
+}
+if(data.msg.startsWith('^die')){
+sock.emit('message', "no u")
+}
+if(data.msg.startsWith('69')){
+sock.emit('message', 'nice')
+}
+if(data.msg.startsWith('^kick')){
+sock.emit('message', 'what?')
+}
+if(data.msg.startsWith('^ban')){
+sock.emit('message', 'excuse me? ban?????')
+}
+if(data.msg.startsWith('sin')){
+sock.emit('message', 'good job')
+}
+if(data.msg.startsWith('#stillalive')){
+sock.emit('message', 'WHY?! WHY WOULD YOU DO THIS, YOU ABSOLUTELY DISGUSTING PIECE OF HUMAN TRASH?!?!')
+}
+if(data.msg.endsWith("stickbug")){
+sock.emit('message', 'stfu kermit')
+}
+if(data.msg.startsWith("stick")){
+sock.emit('message', 'no u')
+}
+if(data.msg.startsWith("^1ball")){
+sock.emit('message', 'yes.')
+}
+if(data.msg.startsWith("^0ball")){
+sock.emit('message', 'i didnt hear you. could you say that again?')
+}
+if(data.msg.startsWith("^morty")){
+sock.emit('message', 'not that question again, i dont know any rick')
+}
+if(data.msg.startsWith("^kill")){
+sock.emit('message', 'how about YOU die? how does that sound?')
+}
+if(data.msg.startsWith("^disconnect")){
+sock.emit('message', 'no')
+}
+if(data.msg.startsWith("^respeccs")){
+sock.emit('message', 'respecc pade.')
+}
+if(data.msg.startsWith("^roll")){
+sock.emit('message', 'you roll a ... -64.3!')
+}
+if(data.msg.startsWith("^yeet")){
+sock.emit('message', 'they call me, the ｓｋｅｅｔｅｒ   ｙｅｅｔｅｒ!   i skeet, then i   ｙ   ｅ    ｅ    ｔ    ！')
+}
+if(data.msg.startsWith("^spam")){
+sock.emit('message', 'what? did you just ask me to spam? you know, people like you are the reason trollbox is a dumpster fire nowadays. you dont deserve life. go die in a ditch, you dispoasble piece of human trash.')
+}
+if(data.msg.startsWith("is")){
+sock.emit('message', 'yes')
+}
+if(data.msg.startsWith("are")){
+sock.emit('message', 'yep')
+}
+if(data.msg.startsWith("should")){
+sock.emit('message', 'uh huh')
+}
+
+
+
 
 })
