@@ -18,7 +18,7 @@ sock.emit("user joined", "Krinn [^help]", "white");
 
 sock.on('message', function(data){
 if(data.msg.startsWith('^help')){
-sock.emit('message', 'Oi! im Krinn, the bot that does nothing useful! // prefix: " ^ " // rpg // comp // ins // creator // creep // ajl // die // ban // secret // meme // 1ball // 0ball // morty // kill // disconnect // respeccs // roll // spam // yeet // kr // say // game // destroy // and other secret commands!!!!!!!!1!')
+sock.emit('message', 'Oi! im Krinn, the bot that does nothing useful! // prefix: " ^ " // rpg // comp // ins // creator // creep // ajl // die // ban // secret // meme // 1ball // 0ball // morty // kill // disconnect // respeccs // roll // spam // yeet // kr // say // game // destroy // alt // and other secret commands!!!!!!!!1!')
 }
 if(data.msg.startsWith('^comp')){
 sock.emit('message', 'you (dont) suck e g g s')
@@ -141,5 +141,26 @@ sock.emit('message', 'congrats, your screen is now spinning!')
 }
 if(data.msg.endsWith("fortnite")){
 sock.emit('message', 'congrats, you have been disconnected!')
+}
+if(data.msg.startsWith(".bot")){
+sock.emit('message', 'i may or may not be a bot.')
+}
+if(data.msg.startsWith("/bot")){
+sock.emit('message', 'i may or may not me a bot.')
+}
+if(data.msg.startsWith("what is")){
+sock.emit('message', 'h u m a n   f l e s h')
+}
+if(data.msg.startsWith("^y")){
+sock.emit('message', 'y  i    k     e      s')
+}
+if(data.msg.startsWith("Kailey is")){
+sock.emit('message', 'i concur')
+}
+if(data.msg.endsWith("Gamma")){
+sock.emit('message', 'i know.')
+}
+if(data.msg.startsWith("^alt")){
+sock.emit('message', 'Alternate Trollbox is @ http://local93.darkok.xyz:8082/')
 }
 })
