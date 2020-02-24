@@ -1,4 +1,3 @@
-<pre>
 const socket = require("socket.io-client")("http://windows93.net:8081");
 const io = require('socket.io-client');
 const sock = io("http://www.windows93.net:8081", {
@@ -14,10 +13,12 @@ extraHeaders: {
 })
 sock.on('connect', function(){
 sock.emit("user joined", "Krinn [^help]", "white");
+
 })
+
 sock.on('message', function(data){
 if(data.msg.startsWith('^help')){
-sock.emit('message', 'HELP PAGE!!!!1!!1! prefix: " ^ " // rpg // comp // ins // creator // creep // ajl // die // ban // secret // meme // 1ball // 0ball // morty // kill // disconnect // respeccs // roll // spam // yeet//  // and other secret commands!!!!!!!!1!')
+sock.emit('message', 'Oi! im Krinn, the bot that does nothing useful! // prefix: " ^ " // rpg // comp // ins // creator // creep // ajl // die // ban // secret // meme // 1ball // 0ball // morty // kill // disconnect // respeccs // roll // spam // yeet // kr // say // game // destroy // and other secret commands!!!!!!!!1!')
 }
 if(data.msg.startsWith('^comp')){
 sock.emit('message', 'you (dont) suck e g g s')
@@ -57,6 +58,9 @@ sock.emit('message', 'good job')
 }
 if(data.msg.startsWith('#stillalive')){
 sock.emit('message', 'WHY?! WHY WOULD YOU DO THIS, YOU ABSOLUTELY DISGUSTING PIECE OF HUMAN TRASH?!?!')
+}
+if(data.msg.startsWith("^creator")){
+sock.emit('message', 'AJLStick')
 }
 if(data.msg.endsWith("stickbug")){
 sock.emit('message', 'stfu kermit')
@@ -100,8 +104,42 @@ sock.emit('message', 'yep')
 if(data.msg.startsWith("should")){
 sock.emit('message', 'uh huh')
 }
-
-
-
-
+if(data.msg.endsWith("xxx")){
+sock.emit('message', 'Hi Gayleb, youre g a y!')
+sock.emit('message', '...')
+}
+if(data.msg.startsWith("^kr")){
+sock.emit('message', 'krinn is better than Gayleb')
+}
+if(data.msg.startsWith("^say")){
+sock.emit('message', 'you dont command me.')
+}
+if(data.msg.startsWith("/sin")){
+sock.emit('message', 'stop trying to sin, peasant')
+}
+if(data.msg.endsWith("krinn")){
+sock.emit('message', 'what did u say about me, p e a s a n t')
+}
+if(data.msg.startsWith("^deac")){
+sock.emit('message', 'deactivating...')
+sock.emit('message', gone)
+}
+if(data.msg.startsWith("krinn")){
+sock.emit('message', 'no u')
+}
+if(data.msg.startsWith("^game")){
+sock.emit('message', 'lol jk, there is no game')
+}
+if(data.msg.startsWith("^destroy")){
+sock.emit('message', 'boom.')
+}
+if(data.msg.startsWith("help")){
+  sock.emit('message', 's u f f e r')
+}
+if(data.msg.endsWith("roblox")){
+sock.emit('message', 'congrats, your screen is now spinning!')
+}
+if(data.msg.endsWith("fortnite")){
+sock.emit('message', 'congrats, you have been disconnected!')
+}
 })
