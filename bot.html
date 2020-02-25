@@ -1,21 +1,23 @@
-const socket = require("socket.io-client")("http://windows93.net:8081");
+
+
+const socket = require("socket.io-client")("http://local93.darkok.xyz:8082/");
 const io = require('socket.io-client');
-const sock = io("http://www.windows93.net:8081", {
+const sock = io("http://local93.darkok.xyz:8082/", {
 path: '/socket.io',
 transportOptions: {
 polling: {
 extraHeaders: {
-"Origin": "http://www.windows93.net",
-"Referer": "http://www.windows93.net/trollbox/index.php"
+"Origin": "http://local93.darkok.xyz:8082/",
+"Referer": "http://local93.darkok.xyz:8082/"
 }
 }
 }
 })
+
 sock.on('connect', function(){
 sock.emit("user joined", "Krinn [^help]", "white");
 
 })
-
 sock.on('message', function(data){
 if(data.msg.startsWith('^help')){
 sock.emit('message', 'Oi! im Krinn, the bot that does nothing useful! // prefix: " ^ " // ^rpg // ^comp // ^ins // ^creator // ^creep // ^ajl // ^die // ^ban // ^secret // ^meme // ^1ball // ^0ball // ^morty // ^kill // ^disconnect // ^respeccs // ^roll // ^spam // ^yeet // ^kr // ^say // ^game // ^destroy // ^alt // and other secret commands!!!!!!!!1!')
@@ -73,6 +75,7 @@ sock.emit('message', 'yes.')
 }
 if(data.msg.startsWith("^0ball")){
 sock.emit('message', 'i didnt hear you. could you say that again?')
+sock.emit('message', 'i didnt hear you. could you say that again? ')
 }
 if(data.msg.startsWith("^morty")){
 sock.emit('message', 'not that question again, i dont know any rick')
@@ -88,6 +91,7 @@ sock.emit('message', 'respecc pade.')
 }
 if(data.msg.startsWith("^roll")){
 sock.emit('message', 'you roll a ... -64.3!')
+sock.emit('message', 'out of order.')
 }
 if(data.msg.startsWith("^yeet")){
 sock.emit('message', 'they call me, the ｓｋｅｅｔｅｒ   ｙｅｅｔｅｒ!   i skeet, then i   ｙ   ｅ    ｅ    ｔ    ！')
@@ -163,4 +167,9 @@ sock.emit('message', 'i know.')
 if(data.msg.startsWith("^alt")){
 sock.emit('message', 'Alternate Trollbox is @ http://local93.darkok.xyz:8082/')
 }
+if(data.msg.startsWith("^reset")){
+sock.emit('message', 'disconnecting')
+setTimeout(data, 2000)
+}
+
 })
