@@ -1,14 +1,14 @@
 
 
-const socket = require("socket.io-client")("http://local93.darkok.xyz:8082/");
+const socket = require("socket.io-client")("http://www.windows93.net:8081/");
 const io = require('socket.io-client');
-const sock = io("http://local93.darkok.xyz:8082/", {
+const sock = io("http://www.windows93.net:8081/", {
 path: '/socket.io',
 transportOptions: {
 polling: {
 extraHeaders: {
-"Origin": "http://local93.darkok.xyz:8082/",
-"Referer": "http://local93.darkok.xyz:8082/"
+"Origin": "http://www.windows93.net:8081/",
+"Referer": "http://www.windows93.net:8081/"
 }
 }
 }
@@ -68,7 +68,13 @@ if(data.msg.endsWith("stickbug")){
 sock.emit('message', 'stfu kermit')
 }
 if(data.msg.startsWith("stick")){
-sock.emit('message', 'no u')
+sock.emit('message', 'dont call me that')
+}
+if(data.msg.startsWith("ajlstick")){
+sock.emit('message', 'i think hes here now.')
+}
+if(data.msg.startsWith("ajl")){
+sock.emit('message', 'hes right here.')
 }
 if(data.msg.startsWith("^1ball")){
 sock.emit('message', 'yes.')
