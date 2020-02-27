@@ -1,0 +1,21 @@
+<html>
+<pre>
+The machine is running.
+
+<p id="power"></p><p id="increment"></p>
+<p id="absorb"></a>
+<script>
+var power = 1;
+var increment = 1;
+window.setInterval(function () {
+  power = power + increment;
+  document.getElementById("power").innerHTML = "it has generated " + power + " power.";
+  document.getElementById("increment").innerHTML = "machine force:" + increment;
+}, 100);
+
+function testNum(a) {
+  if (a > 0) {
+    return "positive";
+
+
+</script>
