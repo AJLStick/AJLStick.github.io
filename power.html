@@ -1,9 +1,11 @@
 <html>
-<pre>
+<style>
+button { border:1px solid black;}
+</style>
+<pre><Center>
 The machine is running.
- <Center>
-[power generated:]<p id="power"></p>
-<button style="border:1px solid black">use 100 power</button> <button onclick="function(UAll)" style="border:1px solid black">use all power</button>
+
+[power generated:]<p id="power"></p><button onclick="useAll()">Use all power</button>
 
 
 
@@ -17,18 +19,19 @@ The machine is running.
 
 
 <script>
-var power = 0;
+var power = 10;
 var div = document.getElementById('power');
 setTimeout(function(){
     var st = setInterval(function(){
-    p.innerHTML = ++power;
-    if (power > 0){
+    div.innerHTML = ++power;
+    if (power > 10000000){
         clearInterval(st);
     }
   },1000)
 },5000);
 
-
-
+function useAll(){
+var power = 0;
+}
 
 </script>
