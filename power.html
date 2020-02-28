@@ -12,17 +12,14 @@ The machine is running.
 
 
 <script>
-var power = 1;
+document.cookie = power;
+var power = document.cookie;
 var increment = 1;
 window.setInterval(function () {
   power = power + increment;
   document.getElementById("power").innerHTML = "it has generated " + power + " power.";
 }, 100);
   document.getElementById("increment").innerHTML = "machine force:" + increment;
-function revealAb() {
-if(power > 100) {
-
-document
 
 }
 
