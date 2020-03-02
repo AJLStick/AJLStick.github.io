@@ -1,35 +1,84 @@
-<html>
 <style>
-button { border:1px solid black;}
+html { background-color:black; color:white;}
+button { border: 1px solid black;}
+blue {color:blue;}
+red {color:red;}
+grey {color:grey;}
+.html-marquee {width:100px;background-color:black;font-family:Arial;font-size:12pt;color:white;border-width:1;border-style:solid;border-color:black;}
 </style>
-<pre><Center>
-The machine is running.
+<html><center><pre>
+______________
+|<marquee class="html-marquee" direction="left" behavior="scroll" scrollamount="30" >=-=-=-=-=-=-=-=-=-</marquee>|
+______________<head>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+	</head>
+	<body onload="ranksNum()">
+<button onclick="ranksNum()">bb</button>
+<button onclick="cookieClick(1)">Generate Energy</button>
+<blue>
+<span id="cookies">0</span>V of power generated
+</blue>
+<button onclick="buyCursor()">Upgrade Capacitors</button>
+<red>
+Capacitor level <span id="cursors">0</span>
+</red>
+<span id="cursorCost">10</span> for next capacitor upgrade
 
-[power generated:]<p id="power"></p><button onclick="useAll()">Use all power</button><p id="total"></p>
-
-
-
-
-
+<div id="rank"></rank>
+<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
 
 
 <script>
-var power = 0
-var total = 0;
-var div = document.getElementById('power');
-used.innerHTML = used;
-setTimeout(function(){
-    var st = setInterval(function(){
-    div.innerHTML = ++power;
-    if (power > 100000000000000000000000000000){
-        clearInterval(st);
-    }
-  },1000)
-},5);
+var rank = "none";
+var cookies = 0;
+window.addEventListener("mousedown", function(rankNum){
+document.getElementById("rank").innerHTML = rank;
+if(cookies >=nextrank){
+rank = rank - 1;
+nextrank = nextrank * 2;
+}
+}, true);
+window.addEventListener("keydown", function(rankNum){
+document.getElementById("rank").innerHTML = rank;
+if(cookies >=nextrank){
+rank = rank - 1;
+nextrank = nextrank * 2;
+}
+}, true);
 
-function useAll(){
-used = used + power;
-power = power - power;
+function cookieClick(number){
+    cookies = cookies + number;
+    document.getElementById("cookies").innerHTML = cookies;
 }
 
+var cursors = 0;
+var nextrank = 100;
+var rank = 100;
+
+function buyCursor(){
+    var cursorCost = Math.floor(10 * Math.pow(1.1,cursors));     //works out the cost of this cursor
+    if(cookies >= cursorCost){                                   //checks that the player can afford the cursor
+        cursors = cursors + 1;                                   //increases number of cursors
+    	cookies = cookies - cursorCost;                          //removes the cookies spent
+        document.getElementById('cursors').innerHTML = cursors;  //updates the number of cursors for the user
+        document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
+    }
+    var nextCost = Math.floor(10 * Math.pow(1.1,cursors));       //works out the cost of the next cursor
+    document.getElementById('cursorCost').innerHTML = nextCost;  //updates the cursor cost for the user
+}
+
+window.setInterval(function(){
+	
+	cookieClick(cursors);
+	
+}, 1000);
+
+function ranksNum(){
+document.getElementById("rank").innerHTML = rank;
+if(cookies >=99){
+rank = "1st";
+}
+}
 </script>
