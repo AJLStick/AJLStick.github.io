@@ -16,13 +16,11 @@ The machine is running.
 <script>
 var power = 0
 var total = 0;
-var div = document.getElementById('total');
 var div = document.getElementById('power');
 used.innerHTML = used;
 setTimeout(function(){
     var st = setInterval(function(){
     div.innerHTML = ++power;
-div.innerHTML = ++total;
     if (power > 100000000000000000000000000000){
         clearInterval(st);
     }
