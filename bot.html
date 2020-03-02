@@ -1,35 +1,38 @@
-
-
-const socket = require("socket.io-client")("http://www.windows93.net:8081/");
+<pre>
+const socket = require("socket.io-client")("http://windows93.net:8081/");
 const io = require('socket.io-client');
-const sock = io("http://www.windows93.net:8081/", {
+const sock = io("http://windows93.net:8081/", {
 path: '/socket.io',
 transportOptions: {
 polling: {
 extraHeaders: {
-"Origin": "http://www.windows93.net:8081/",
-"Referer": "http://www.windows93.net:8081/"
+"Origin": "http://windows93.net:8081/",
+"Referer": "http://windows93.net:8081/"
 }
 }
 }
 })
 
+
 sock.on('connect', function(){
-sock.emit("user joined", "Krinn [^help]", "white");
+sock.emit("user joined", "Krinn [^h]", "white");
 
 })
 sock.on('message', function(data){
+if(data.msg.startsWith('^h')){
+sock.emit('message', 'Oi! im Krinn, the bot that does nothing useful, thanks to AJLStick! \n\ ^fateball \n\ ^egg \n\ ^rpg \n\ ^help \n\ ^ins \n\ ^creator \n\ ^creep \n\ ^ajl \n\ ^die \n\ ^ban \n\ ^secret \n\ ^meme \n\ ^1ball \n\ ^0ball \n\ ^morty \n\ ^kill \n\ ^2kill \n\ ^disconnect \n\ ^trunk \n\ ^alpharoll \n\ ^respeccs \n\ ^roll \n\ ^spam \n\ ^yeet \n\ ^kr \n\ ^say \n\ ^game \n\ ^destroy \n\---CUSTOM COMMANDS---\n\ ^vulpix \n\ ^sonic \n\ ^oof \n\ ^nora \n\ ^void \n\ ^thinqpad \n\ ^kailey \n\ ^biglunaroff \n\ ^e \n\ ^lestab \n\ ^s \n\and other secret commands!!!!!')
+}
 if(data.msg.startsWith('^help')){
-sock.emit('message', 'Oi! im Krinn, the bot that does nothing useful! // prefix: " ^ " // ^rpg // ^comp // ^ins // ^creator // ^creep // ^ajl // ^die // ^ban // ^secret // ^meme // ^1ball // ^0ball // ^morty // ^kill // ^disconnect // ^respeccs // ^roll // ^spam // ^yeet // ^kr // ^say // ^game // ^destroy // ^alt // and other secret commands!!!!!!!!1!')
+sock.emit('message', "it's ^h, not ^help.")
 }
-if(data.msg.startsWith('^comp')){
-sock.emit('message', 'you (dont) suck e g g s')
-}
-if(data.msg.startsWith('^ins')){
-sock.emit('message', 'you suck e g g s')
+if(data.msg.startsWith('^egg')){
+sock.emit('message', 'e g g')
 }
 if(data.msg.startsWith('^creep')){
 sock.emit('message', ':}')
+}
+if(data.msg.startsWith("^kill gayleb")){
+sock.emit('message', 'i would, but kailey would kill me.')
 }
 if(data.msg.startsWith('^rpg')){
 sock.emit('message', 'you mean this? https://ajlstick.github.io/therpg')
@@ -38,7 +41,7 @@ if(data.msg.startsWith('^secret')){
 sock.emit('message', '[1 5 2 3 4]')
 }
 if(data.msg.startsWith('^meme')){
-sock.emit('message', 'https://imgur.com/a/fbAievW')
+sock.emit('message', 'https://i.imgur.com/lzEJ9Y1.png')
 }
 if(data.msg.startsWith('^ajl')){
 sock.emit('message', "AJLStick! https://ajlstick.us")
@@ -68,20 +71,13 @@ if(data.msg.endsWith("stickbug")){
 sock.emit('message', 'stfu kermit')
 }
 if(data.msg.startsWith("stick")){
-sock.emit('message', 'dont call me that')
-}
-if(data.msg.startsWith("ajlstick")){
-sock.emit('message', 'i think hes here now.')
-}
-if(data.msg.startsWith("ajl")){
-sock.emit('message', 'hes right here.')
+sock.emit('message', 'no u')
 }
 if(data.msg.startsWith("^1ball")){
 sock.emit('message', 'yes.')
 }
 if(data.msg.startsWith("^0ball")){
 sock.emit('message', 'i didnt hear you. could you say that again?')
-sock.emit('message', 'i didnt hear you. could you say that again? ')
 }
 if(data.msg.startsWith("^morty")){
 sock.emit('message', 'not that question again, i dont know any rick')
@@ -103,7 +99,7 @@ if(data.msg.startsWith("^yeet")){
 sock.emit('message', 'they call me, the ｓｋｅｅｔｅｒ   ｙｅｅｔｅｒ!   i skeet, then i   ｙ   ｅ    ｅ    ｔ    ！')
 }
 if(data.msg.startsWith("^spam")){
-sock.emit('message', 'what? did you just ask me to spam? you know, people like you are the reason trollbox is a dumpster fire nowadays. you dont deserve life. go die in a ditch, you dispoasble piece of human trash.')
+sock.emit('message', 'what? did you just ask me to spam?\n\ you know, people like you are the reason trollbox is a dumpster fire nowadays.\n\ you dont deserve life. go die in a ditch, you dispoasble piece of human trash.')
 }
 if(data.msg.startsWith("is")){
 sock.emit('message', 'yes')
@@ -137,6 +133,12 @@ sock.emit('message', gone)
 if(data.msg.startsWith("krinn")){
 sock.emit('message', 'no u')
 }
+if(data.msg.startsWith("Krinn")){
+sock.emit('message', 'no u')
+}
+if(data.msg.endsWith("Krinn")){
+sock.emit('message', 'w h a t')
+}
 if(data.msg.startsWith("^game")){
 sock.emit('message', 'lol jk, there is no game')
 }
@@ -162,7 +164,7 @@ if(data.msg.startsWith("what is")){
 sock.emit('message', 'h u m a n   f l e s h')
 }
 if(data.msg.startsWith("^y")){
-sock.emit('message', 'y  i    k     e      s')
+sock.emit('message', 'y\n\  i\n\    k\n\      e\n\        s')
 }
 if(data.msg.startsWith("Kailey is")){
 sock.emit('message', 'i concur')
@@ -173,9 +175,77 @@ sock.emit('message', 'i know.')
 if(data.msg.startsWith("^alt")){
 sock.emit('message', 'Alternate Trollbox is @ http://local93.darkok.xyz:8082/')
 }
-if(data.msg.startsWith("^reset")){
-sock.emit('message', 'disconnecting')
-setTimeout(data, 2000)
+if(data.msg.startsWith("bruh")){
+sock.emit('message', 'b r u h')
+}
+if(data.msg.startsWith("^sonic")){
+sock.emit('message', 'haha lol goteem')
+}
+if(data.msg.startsWith("hey")){
+sock.emit('message', 'hello.')
+}
+if(data.msg.startsWith("hey")){
+sock.emit('message', 'hello.')
+}
+if(data.msg.startsWith("^nora")){
+sock.emit('message', '"I have no idea what I am doing here but am happy to be involved." - Nora, 2020')
+}
+if(data.msg.startsWith("^void")){
+sock.emit('message', '"​  "- Void, 2020​')
+}
+if(data.msg.startsWith("^oof")){
+sock.emit('message', '___________\n\|here lies|\n\|   oof   |\n\|    ~    |\n\|_________|')
+}
+if(data.msg == ("^thinqpad")){
+sock.emit('message', '[NOTHING TO SEE HERE M8]')
+}
+if(data.msg == ("^biglunaroff")){
+sock.emit('message', '[Biglunaroff is the only one real russian]')
+}
+if(data.msg.startsWith("ok boomer")){
+sock.emit('message', 'nicely done')
+}
+if(data.msg.endsWith("Gayleb!")){
+sock.emit('message', ':{')
+}
+if(data.msg.startsWith("^fateball")){
+var colours = ["slip on some grease and shatter your skull against a counter", "live to be 97", "don't do anything", "are consumed by the void", "get run over by a 16-wheeler and die","consume the void itself!","are stabbed 48.3 times in the chest! you die","are shot in the head with a crossbow, you die"]
+var landedOn = colours[Math.round(Math.random() * (colours.length - 0) + 0)]
+sock.emit('message', "you " + landedOn + "!")
+}
+if(data.msg == ("creeper")){
+sock.emit('message', ' █████╗ ██╗    ██╗    ███╗   ███╗ █████╗ ███╗   ██╗\n\██╔══██╗██║    ██║    ████╗ ████║██╔══██╗████╗  ██║\n\██╔══██╗██║    ██║    ████╗ ████║██╔══██╗████╗  ██║\n\███████║██║ █╗ ██║    ██╔████╔██║███████║██╔██╗ ██║\n\███████║██║ █╗ ██║    ██╔████╔██║███████║██╔██╗ ██║\n\██╔══██║██║███╗██║    ██║╚██╔╝██║██╔══██║██║╚██╗██║\n\██║  ██║╚███╔███╔╝    ██║ ╚═╝ ██║██║  ██║██║ ╚████║\n\╚═╝  ╚═╝ ╚══╝╚══╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝')
+sock.emit('message', 'no   ')
+}
+if(data.msg.startsWith("sock.")){
+sock.emit('message', 'just what are you trying to do?')
+}
+if(data.msg.startsWith("socket.")){
+sock.emit('message', 'just what are you trying to do? ')
+}
+if(data.msg == ("^alpharoll")){
+sock.emit('message', 'you roll an alphanumeric die for: ' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15))
+}
+if(data.msg == ("^e")){
+sock.emit('message', 'the letter E.')
+}
+if(data.msg.startsWith ("^s")){
+sock.emit('message', data.msg + '\n\there. i said it. are you happy?')
+}
+if(data.msg == ("^vulpix")){
+sock.emit('message', 'Vulpix but Stirlitz looks like a russian communist.')
+}
+if(data.msg == ("^kailey")){
+sock.emit('message', '"I am Kailey, fuck" - Kailey, 2019')
+}
+if(data.msg == ("^2kill")){
+sock.emit('message', "i'll kill you twice")
+}
+if(data.msg == ("^trunk")){
+sock.emit('message', "where you're going")
+}
+if(data.msg == ("^lestab")){
+sock.emit('message', "Men do not have pecs, they are straight up boobs. And I can prove that whit Chris Evans and his man boobies.")
 }
 
 })
