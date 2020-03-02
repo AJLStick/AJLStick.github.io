@@ -1,13 +1,13 @@
-<pre>
-const socket = require("socket.io-client")("http://windows93.net:8081/");
+
+const socket = require("socket.io-client")("http://local93.darkok.xyz:8082/");
 const io = require('socket.io-client');
-const sock = io("http://windows93.net:8081/", {
+const sock = io("http://local93.darkok.xyz:8082/", {
 path: '/socket.io',
 transportOptions: {
 polling: {
 extraHeaders: {
-"Origin": "http://windows93.net:8081/",
-"Referer": "http://windows93.net:8081/"
+"Origin": "http://local93.darkok.xyz:8082/ ",
+"Referer": "http://local93.darkok.xyz:8082/"
 }
 }
 }
@@ -20,7 +20,7 @@ sock.emit("user joined", "Krinn [^h]", "white");
 })
 sock.on('message', function(data){
 if(data.msg.startsWith('^h')){
-sock.emit('message', 'Oi! im Krinn, the bot that does nothing useful, thanks to AJLStick! \n\ ^fateball \n\ ^egg \n\ ^rpg \n\ ^help \n\ ^ins \n\ ^creator \n\ ^creep \n\ ^ajl \n\ ^die \n\ ^ban \n\ ^secret \n\ ^meme \n\ ^1ball \n\ ^0ball \n\ ^morty \n\ ^kill \n\ ^2kill \n\ ^disconnect \n\ ^trunk \n\ ^alpharoll \n\ ^respeccs \n\ ^roll \n\ ^spam \n\ ^yeet \n\ ^kr \n\ ^say \n\ ^game \n\ ^destroy \n\---CUSTOM COMMANDS---\n\ ^vulpix \n\ ^sonic \n\ ^oof \n\ ^nora \n\ ^void \n\ ^thinqpad \n\ ^kailey \n\ ^biglunaroff \n\ ^e \n\ ^lestab \n\ ^s \n\and other secret commands!!!!!')
+sock.emit('message', 'Oi! im Krinn, the bot that does nothing useful, thanks to AJLStick! \n\ ^rw \n\ ^fateball \n\ ^egg \n\ ^rpg \n\ ^help \n\ ^ins \n\ ^creator \n\ ^creep \n\ ^ajl \n\ ^die \n\ ^ban \n\ ^secret \n\ ^meme \n\ ^1ball \n\ ^0ball \n\ ^morty \n\ ^kill \n\ ^2kill \n\ ^disconnect \n\ ^trunk \n\ ^alpharoll \n\ ^respeccs \n\ ^roll \n\ ^spam \n\ ^yeet \n\ ^kr \n\ ^say \n\ ^game \n\ ^destroy \n\---CUSTOM COMMANDS---\n\ ^vulpix \n\ ^sonic \n\ ^oof \n\ ^nora \n\ ^void \n\ ^thinqpad \n\ ^kailey \n\ ^biglunaroff \n\ ^e \n\ ^lestab \n\ ^s \n\and other secret commands!!!!!')
 }
 if(data.msg.startsWith('^help')){
 sock.emit('message', "it's ^h, not ^help.")
@@ -247,5 +247,13 @@ sock.emit('message', "where you're going")
 if(data.msg == ("^lestab")){
 sock.emit('message', "Men do not have pecs, they are straight up boobs. And I can prove that whit Chris Evans and his man boobies.")
 }
+if(data.msg.startsWith("^rw")){
+var one = ["nasty","raw","sweaty","juicy","wet","sloppy","flapping"]
+var two = ["body","person","flab","bot"]
+var adj = one[Math.round(Math.random() * (one.length - 0) + 0)]
+var nou = two[Math.round(Math.random() * (two.length - 0) + 0)]
+sock.emit('message', "the " + adj + " " + nou)
+}
+
 
 })
