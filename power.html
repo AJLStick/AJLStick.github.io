@@ -1,6 +1,7 @@
+
 <style>
 html { background-color:black; color:white;}
-button { border: 1px solid black;}
+button { border: 1px dashed black;}
 blue {color:blue;}
 red {color:red;}
 grey {color:grey;}
@@ -13,8 +14,7 @@ ______________<head>
 		<link rel="stylesheet" type="text/css" href="interface.css" />
 	</head>
 	<body onload="ranksNum()">
-<button onclick="reSet()">Reset Everything</button>
-
+<button onclick="reset()">Reset</button>
 <button onclick="cookieClick(1)">Generate Energy</button>
 <blue>
 <span id="cookies">0</span>V of power generated
@@ -25,7 +25,7 @@ Capacitor level <span id="cursors">0</span>
 </red>
 <span id="cursorCost">10</span> for next capacitor upgrade
 
-Rank: <value id="rank"></value>/100
+<div id="rank"></rank>
 <script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
@@ -60,14 +60,14 @@ var rank = 100;
 
 function buyCursor(){
     var cursorCost = Math.floor(10 * Math.pow(1.1,cursors));     //works out the cost of this cursor
-    if(powers >= capacitorCost){                                   //checks that the player can afford the cursor
+    if(cookies >= cursorCost){                                   //checks that the player can afford the cursor
         cursors = cursors + 1;                                   //increases number of cursors
-    	cookies = cookies - capacitorCost;                          //removes the cookies spent
-        document.getElementById('capacitors').innerHTML = cursors;  //updates the number of cursors for the user
-        document.getElementById('powers').innerHTML = powers;  //updates the number of cookies for the user
+    	cookies = cookies - cursorCost;                          //removes the cookies spent
+        document.getElementById('cursors').innerHTML = cursors;  //updates the number of cursors for the user
+        document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
     }
     var nextCost = Math.floor(10 * Math.pow(1.1,cursors));       //works out the cost of the next cursor
-    document.getElementById('capacitorCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    document.getElementById('cursorCost').innerHTML = nextCost;  //updates the cursor cost for the user
 }
 
 window.setInterval(function(){
@@ -76,13 +76,11 @@ window.setInterval(function(){
 	
 }, 1000);
 
-function reSet(){
-power = 0;
-rank = 0;
+function reset(){
+cookies = 0;
+cursors = 0;
+rank = 100;
+cursorCost = 0;
 nextrank = 0;
-capacitors = 0;
-capacitorCost = 0;
-}
-
 }
 </script>
