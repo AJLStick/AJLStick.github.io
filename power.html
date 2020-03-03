@@ -26,6 +26,7 @@ Capacitor level <span id="cursors">0</span>
 </red>
 <span id="cursorCost">10</span> for next capacitor upgrade
 
+<div id="capacitor"></div>
 <div id="status"></div>
 <div id="rank"></rank>
 <script type="text/javascript" src="main.js"></script>
@@ -37,14 +38,14 @@ Capacitor level <span id="cursors">0</span>
 var rank = "none";
 var cookies = 0;
 window.addEventListener("mousedown", function(rankNum){
-document.getElementById("rank").innerHTML = rank;
+document.getElementById("rank").innerHTML = "Rank " + rank;
 if(cookies >=nextrank){
 rank = rank - 1;
 nextrank = nextrank * 2;
 }
 }, true);
 window.addEventListener("keydown", function(rankNum){
-document.getElementById("rank").innerHTML = rank;
+document.getElementById("rank").innerHTML = "Rank " + rank;
 if(cookies >=nextrank){
 rank = rank - 1;
 nextrank = nextrank * 2;
@@ -68,7 +69,10 @@ if(cookies >= 2000)
 document.getElementById("status").innerHTML = "<font color=grey>you know what?</font>";
 if(cookies >= 5000)
 document.getElementById("status").innerHTML = "<font color=purple>i'm finished with you.</font>";
+if(cursors >= 0)
+document.getElementById("capacitor").innerHTML = "<font color=grey>----{{=" + cursors + "=}}----</font>";
 }
+
 
 var cursors = 0;
 var nextrank = 100;
