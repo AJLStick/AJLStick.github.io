@@ -16,7 +16,7 @@ ______________<head>
 	</head>
 	<body onload="ranksNum()">
 <button onclick="reset()">Reset</button>
-<button onclick="cookieClick(1)">Generate Energy</button>
+<button onclick="cookieClick(clicks)">Generate Energy</button>
 <blue>
 <span id="cookies">0</span>V of power generated
 </blue>
@@ -26,6 +26,9 @@ Capacitor level <span id="cursors">0</span>
 </red>
 <span id="cursorCost">10</span> for next capacitor upgrade
 
+<button onclick="buyClick()">Upgrade Generator</button>
+
+<div id="clickCost"></div>
 <div id="capacitor"></div>
 <div id="status"></div>
 <div id="rank"></rank>
@@ -35,6 +38,7 @@ Capacitor level <span id="cursors">0</span>
 
 
 <script>
+var clicks = 1;
 var rank = "none";
 var cookies = 0;
 window.addEventListener("mousedown", function(rankNum){
@@ -55,6 +59,11 @@ nextrank = nextrank * 2;
 function cookieClick(number){
     cookies = cookies + number;
     document.getElementById("cookies").innerHTML = cookies;
+
+function Click(number){
+    cookies = cookies + number;
+    document.getElementById("cookies").innerHTML = cookies;
+
 if(cookies >= 10)
 document.getElementById("status").innerHTML = "good job..";
 if(cookies >= 100)
@@ -92,16 +101,30 @@ function buyCursor(){
 
 
 }
-
-
 window.setInterval(function(){
-	
-	cookieClick(cursors);
-	
+}, 1000);
+
+var clicks = 1;
+function buyClick(){
+    var clickCost = Math.floor(10 * Math.pow(1.1,clicks));     //works out the cost of this cursor
+    if(cookies >= clickCost){                                   //checks that the player can afford the cursor
+        clicks = clicks + 1;                                   //increases number of cursors
+    	cookies = cookies - clickCost;                          //removes the cookies spent
+        document.getElementById('clicks').innerHTML = clicks;  //updates the number of cursors for the user
+        document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
+    }
+    var nextCost2 = Math.floor(10 * Math.pow(1.1,clicks));       //works out the cost of the next cursor
+    document.getElementById('clickCost').innerHTML = nextCost2;  //updates the cursor cost for the user
+
+
+
+}
+
 }, 1000);
 
 function reset(){
 cookies = 0;
+clicks = 1;
 cursors = 0;
 rank = 100;
 cursorCost = 0;
