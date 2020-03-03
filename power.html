@@ -61,7 +61,13 @@ document.getElementById("status").innerHTML = "that's enough.";
 if(cookies >= 250)
 document.getElementById("status").innerHTML = "you can stop now..";
 if(cookies >= 500)
-document.getElementById("status").innerHTML = "<font color=red>stop generating power.</font>";
+document.getElementById("status").innerHTML = "<font color=yellow>stop generating power.</font>";
+if(cookies >= 1000)
+document.getElementById("status").innerHTML = "<font color=orange>i'm warning you!</font>";
+if(cookies >= 2000)
+document.getElementById("status").innerHTML = "<font color=grey>you know what?</font>";
+if(cookies >= 5000)
+document.getElementById("status").innerHTML = "<font color=purple>i'm finished with you.</font>";
 }
 
 var cursors = 0;
