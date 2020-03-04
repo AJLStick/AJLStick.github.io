@@ -12,10 +12,10 @@ grey {color:grey;}
 </style>
 <html><center><pre>
 [ G E N E R A T I N G ]
-______________
-|<marquee class="html-marquee" direction="left" behavior="scroll" scrollamount="25" >=-=-</marquee>|
-|<marquee class="html-marquee" direction="left" behavior="scroll" scrollamount="15" >-=-=</marquee>|
-|<marquee class="html-marquee" direction="left" behavior="scroll" scrollamount="20" >=-=-</marquee>|
+_______________
+/<marquee class="html-marquee" direction="left" behavior="scroll" scrollamount="25" >*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</marquee>/\
+|<marquee class="html-marquee" direction="left" behavior="scroll" scrollamount="15" >*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</marquee>|+|
+\<marquee class="html-marquee" direction="left" behavior="scroll" scrollamount="20" >*</marquee>\/
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾<head>
 		<link rel="stylesheet" type="text/css" href="interface.css" />
 	</head>
@@ -23,7 +23,7 @@ ______________
 <img src="img/reset.png" onclick="reset()"></button>
 
 
-<img src="img/power.png" onclick="cookieClick(1)"></img>
+<img src="img/power.png" onclick="amountClick(amount)"></img>
 <blue>
 <span id="cookies">0</span>V of power generated
 </blue>
@@ -33,14 +33,18 @@ Capacitor level <span id="cursors">0</span>
 </red>
 <span id="cursorCost">10</span> for next capacitor upgrade
 
-<div id="capacitor"></div>
-<div id="status"></div>
+<img src="img/upgen.png" onclick="buyAmount(1)"></img>
+
+<div id="amount"></div><div id="capacitor"></div><div id="status"></div>
 <script type="text/javascript" src="main.js"></script>
 	</body>
-</html>
-
 
 <script>
+function amountClick(number){
+cookies = cookies +  amount;
+document.getElementById("cookies").innerHTML = cookies;
+}
+
 var cookies = 0;
 function cookieClick(number){
     cookies = cookies + number;
@@ -62,6 +66,24 @@ document.getElementById("status").innerHTML = "<font color=purple>i'm finished w
 if(cursors >= 0)
 document.getElementById("capacitor").innerHTML = "<font color=grey>----{{=" + cursors + "=}}----</font>";
 }
+
+var amount = 1;
+function buyAmount(){
+
+    var amountCost = Math.floor(10 * Math.pow(1.1,amount));     //works out the cost of this cursor
+    if(cookies >= amountCost){                                   //checks that the player can afford the cursor
+        amount = amount + 1;                                   //increases number of cursors
+    	cookies = cookies - amountCost;                          //removes the cookies spent
+        document.getElementById('amount').innerHTML = amount + "V per click";  //updates the number of cursors for the user
+        document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
+    }
+    var nextCost = Math.floor(10 * Math.pow(1.1,amount));       //works out the cost of the next cursor
+    document.getElementById('amountCost').innerHTML = nextACost;  //updates the cursor cost for the user
+
+
+
+}
+
 
 
 var cursors = 0;
