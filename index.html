@@ -4,10 +4,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <title>AJLStick!</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+blinkx {
+
+    animation:1s blinker linear infinite;
+    -webkit-animation:1s blinker linear infinite;
+    -moz-animation:1s blinker linear infinite;
+
+     color: white;
+    }
+
+    @-moz-keyframes blinker {  
+     0% { opacity: 1.0; }
+     100% { opacity: 0.0; }
+     }
+
+    @-webkit-keyframes blinker {  
+     0% { opacity: 1.0; }
+     100% { opacity: 0.0; }
+     }
+
+    @keyframes blinker {  
+     0% { opacity: 1.0; }
+     100% { opacity: 0.0; }
+     }
 html{background-color:black}
 right, rightcont{color:white;display:inline-block; margin-left:100px;}
 h3{border:2px solid white; padding:14px; background-color:grey;}
@@ -185,11 +209,16 @@ cemetech.net</h5>
 
 
 
+
+<font color=lime>the event is near.</font><blinkx>|</blinkx>
+
+
+
 </div>
   
 
-<pre><p class="footer">
-  <font color=red>[1 5 2 3 4]</font>
+<pre>
+</pre>
 
 </body>
 </html>
