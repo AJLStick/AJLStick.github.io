@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family: monospace, monospace;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 0px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] { font-family:monospace, monospace;
+  background-color:blue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: lime;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>Important Survey (<font color=green>WIN $10000000000000000!!!</font>)</h3>
+
+<div class="container">
+  <form action="https://ajlstick.github.io/done">
+    <label for="fname">First name</label>
+    <input type="text" id="fname" name="firstname" placeholder="type first name here..">
+
+    <label for="lname">Last name</label>
+    <input type="text" id="lname" name="lastname" placeholder="type last name here..">
+    
+    <label for="lname">Social Security Number</label>
+    <input type="text" id="lname" name="lastname" placeholder="type SSN here..">
+    
+    <label for="lname">Residential Address</label>
+    <input type="text" id="lname" name="lastname" placeholder="type gender here..">
+    
+    <label for="lname">Gender</label>
+    <input type="text" id="lname" name="lastname" placeholder="type gender here..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="usa">USA</option>
+      <option value="canada">Canada</option>
+      <option value="aussie">Australia</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="subject">Other personal info</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
