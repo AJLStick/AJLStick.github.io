@@ -1,321 +1,180 @@
-<!DOCTYPE HTML>
-<html>
 
+
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>AJLStick.</title>
-  <meta name="description" content="AJLStick's hiding place //  Home of The RPG!" />
-  <meta name="keywords" content="ajlstick, the rpg, rpg, stick, kailey" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <style>
-whi{color:white;}
-html
-{ height: 100%;}
 
-*
-{ margin: 0;
-  padding: 0;}
+<title>AJLStick!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#small{padding:0px}
+#suggest{margin-top:0px}
+h1{margin-bottom:-12px; padding:0px;}
+blinkx {
 
-body
-{ font: normal .80em monospace, monospace;
-  background: #F0EFE2 url(background.png) repeat;
-  color: #000;}
+    animation:1s blinker linear infinite;
+    -webkit-animation:1s blinker linear infinite;
+    -moz-animation:1s blinker linear infinite;
 
-p
-{ padding: 0 0 20px 0;
-  line-height: 1.7em;}
+     color: white;
+    }
 
-img
-{ border: 0;}
+    @-moz-keyframes blinker {  
+     0% { opacity: 1.0; }
+     1% { opacity: 0.0; }
+     }
 
-h1, h2, h3, h4, h5, h6 
-{ font: normal 175% monospace, monospace;
-  color: #000;
-  margin: 0 0 15px 0;
-  padding: 15px 0 5px 0;}
+    @-webkit-keyframes blinker {  
+     0% { opacity: 1.0; }
+     1% { opacity: 0.0; }
+     }
 
-h2
-{ font: normal 175% monospace;}
+    @keyframes blinker {  
+     0% { opacity: 1.0; }
+     1% { opacity: 0.0; }
+     }
+html{background-color:black}
+div{color:white;}
+right, rightcont{color:white;display:inline-block; margin-left:100px;}
+h3 {border:2px solid white; padding:14px; background-color:grey;}
 
-h4, h5, h6
-{ margin: 0;
-  padding: 0 0 5px 0;
-  font: normal 120% monospace;}
+* {
+  box-sizing: border-box;
+}
 
-h5, h6
-{ font: italic 95% monospace;
-  padding: 0 0 15px 0;}
+/* Style the body */
+body {
+  font-family: monospace;
+  margin: 0;
+}
 
-a, a:hover
-{ outline: none;
-  text-decoration: underline;
-  color: #000;}
-
-a:hover
-{ text-decoration: none;}
-
-.left
-{ float: left;
-  width: auto;
-  margin-right: 10px;}
-
-.right
-{ float: right; 
-  width: auto;
-  margin-left: 10px;}
-
-.center
-{ display: block;
+/* Header/logo Title */
+.header {
+  padding: 8px;
   text-align: center;
-  margin: 20px auto;}
+  background: grey;
+  color: white;
+}
 
-blockquote
-{ margin: 20px 0; 
-  padding: 10px 20px 0 20px;
-  border: 1px solid #E5E5DB;
-  background: #FFF;}
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 14px;
+}
 
-ul
-{ margin: 2px 0 22px 17px;}
-
-ul li
-{ list-style-type: circle;
-  margin: 0 0 6px 0; 
-  padding: 0 0 4px 5px;}
-
-ol
-{ margin: 8px 0 22px 20px;}
-
-ol li
-{ margin: 0 0 11px 0;}
-
-#main, #logo, #menubar, #site_content, #footer
-{
- margin-left: auto; 
-  margin-right: auto;}
-
-#header
-{ background: black;
-  height: 202px;}
-
-#logo
-{ width: 898px;
-  position: relative;
-  height: 148px;
-  border-bottom: 2px solid #FFF;}
-
-#logo #logo_text 
-{ position: absolute; 
-  top: 20px;
-  left: 0;}
-
-#logo h1, #logo h2
-{ font: normal 300% monospace;
-  border-bottom: 0;
-  text-transform: none;
-  margin: 0;}
-
-#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover 
-{ padding: 22px 0 0 0;
-  color: #FFF;
-  letter-spacing: -1px;
-  text-decoration: none;}
-
-#logo_text h1 a .logo_colour
-{ color: #FFF;}
-
-#logo_text h2
-{ font-size: 100%;
-  padding: 4px 0 0 0;
-  color: #FFF;}
-
-#menubar
-{ width: 898px;
-  height: 52px;
-  padding: 0;} 
-
-ul#menu, ul#menu li
-{ float: left;
-  margin: 0; 
-  padding: 0;}
-
-ul#menu li
-{ list-style: none;}
-
-ul#menu li a
-{ letter-spacing: 0.1em;
-  font: normal 100% monospace;
-  display: block; 
-  float: left; 
-  height: 17px;
-  margin: 10px 0 0 10px;
-  padding: 9px 26px 6px 26px;
-  text-align: center;
-  color: #FFF;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: transparent;} 
-
-ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
-{ color: #FFF;
-  background: transparent url(transparent_light.png) repeat;}
-
-#site_content
-{ width: 854px;
+/* Style the top navigation bar */
+.navbar {
   overflow: hidden;
-  margin: 0 auto 0 auto;
-  padding: 0 24px 20px 20px;
-  background: #FFF;} 
+  background-color: black;
+}
 
-.sidebar
-{ float: right;
-  width: 210px;
-  padding: 0 15px 20px 15px;}
-
-.sidebar ul
-{ width: 198px; 
-  padding: 4px 0 0 0; 
-  margin: 4px 0 30px 0;}
-
-.sidebar li
-{ list-style: none; 
-  padding: 0 0 7px 0; }
-
-.sidebar li a, .sidebar li a:hover
-{ padding: 0 0 0 40px;
-  display: block;
-  background: transparent url(link.png) no-repeat left center;} 
-
-.sidebar li a.selected
-{ color: #7E2451;
-  text-decoration: none;} 
-
-#content
-{ text-align: left;
+/* Style the navigation bar links */
+.navbar a {
   float: left;
-  width: 595px;
-  padding: 0;}
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 5px;
+border:1px solid white;
+  text-decoration: none;
+}
 
-#content ul
-{ margin: 2px 0 22px 0px;}
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
 
-#content ul li
-{ list-style-type: none;
-  background: url(bullet.png) no-repeat;
-  margin: 0 0 6px 0; 
-  padding: 0 0 4px 25px;
-  line-height: 1.5em;}
-
-#footer
-{ width: 898px;
-  font: normal 100% monospace;
-  height: 33px;
-  padding: 24px 0 5px 0;
-  text-align: center; 
-  background: transparent;
+/* Change color on hover */
+.navbar a:hover {
+  background-color: white;
   color: black;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;}
+}
 
-#footer a
-{ color: #FFF;
-  text-decoration: none;}
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
 
-#footer a:hover
-{ color: #FFF;
-  text-decoration: underline;}
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 0%;
+  background-color: black;
+color:white;
+  padding: 20px;
+border:1px solid black;
+}
 
-.search
-{ color: #5D5D5D; 
-  border: 1px solid #BBB; 
-  width: 134px; 
-  padding: 4px; 
-  font: 100% monospace;}
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: black;
+color:white;
+  padding: 20px;
+}
 
-#colours
-{ height: 0px;
-  text-align: right;
-  padding: 66px 16px 0px 300px;}
-  
-.form_settings
-{ margin: 15px 0 0 0;}
+/* Footer */
+.footer {
+  padding: 0px;
+  text-align: center;
+  background: black;
+}
 
-.form_settings p
-{ padding: 0 0 4px 0;}
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
 
-.form_settings span
-{ float: left; 
-  width: 200px; 
-  text-align: left;}
-  
-.form_settings input, .form_settings textarea
-{ padding: 5px; 
-  width: 299px; 
-  font: 100% monospace; 
-  border: 1px solid #E5E5DB; 
-  background: #FFF; 
-  color: #47433F;}
-  
-.form_settings .submit
-{ font: 100% monospace; 
-  border: 1px solid; 
-  width: 99px; 
-  margin: 0 0 0 212px; 
-  height: 33px;
-  padding: 2px 0 3px 0;
-  cursor: pointer; 
-  background: #000; 
-  color: #FFF;}
-
-.form_settings textarea, .form_settings select
-{ font: 100% monospace; 
-  width: 299px;}
-
-.form_settings select
-{ width: 310px;}
-
-.form_settings .checkbox
-{ margin: 4px 0; 
-  padding: 0; 
-  width: 14px;
-  border: 0;
-  background: none;}
-
-.separator
-{ width: 100%;
-  height: 0;
-  border-top: 1px solid #D9D5CF;
-  border-bottom: 1px solid #FFF;
-  margin: 0 0 20px 0;}
-  
-table
-{ margin: 10px 0 30px 0;}
-
-table tr th, table tr td
-{ background: #3B3B3B;
-  color: #FFF;
-  padding: 7px 4px;
-  text-align: left;}
-  
-table tr td
-{ background: #F0EFE2;
-  color: #47433F;
-  border-top: 1px solid #FFF;}
-
-gry{color:grey;}
-blu{color:blue;}
-cy{color:cyan;}
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+green{color:green;background-color:green;}
+brown{color:saddlebrown;background-color:saddlebrown;}
+leg{color:white; background-color:green;}
+flower{color:yellow; background-color:green;}
+flower2{color:red; background-color:green;}
 </style>
 </head>
-
 <body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          
-          <h1><a href="index.html"><blu>AJ</blu><gry>L</gry><cy>Stick</cy></span></a></h1>
-          <h2>Official host of The RPG</h2>
-<script type="text/javascript">
+
+<div class="header">
+  <pre><font color=cyan><h1>AJLStick
+
+</h1></font><font color=yellow>!</font>
+<font color=blue>_____
+‾‾‾‾‾</font>
+<font color=red>?</font></p></pre>
+</div>
+<div class="navbar">
+    <pre><a href="shift">Sh<font color=cyan>i</font>ft</a></pre>
+<pre><a href="touyube">Tou<font color=red>Yube</font></a></pre>
+  <pre><a href="areyouok">Are You Ok?</a></pre>
+  <pre><a href="doors"><font color=orange>an old secret</font></a></pre>
+  <pre><a href="old_index"><font color=grey>Old Index</font></a></pre>
+<pre><a href="stickos"><font color=yellow>StickOS</font><font color=red>[ALPHA]</font></a></pre>
+<pre><a href="ads">The Ads</a></pre>
+<pre><a href="cyanweb"><font color=cyan>cyan</font><font color=orange>web</font></a></pre>
+<pre><a href="kpage"><font color=pink>Kailey's page</font></a></pre>
+<pre><a href="dont"><font color=red>don't click this link</font></a><div id="left">
+<h1>The RPG Trilogy</h1></div><pre><a href="therpg">The <font color=yellow>R<font color=red>P<font color=blue>G</font></font></font></a><pre><a href="pyrrhic"><font color=red>Pyrrhic</a></font></pre></pre><pre><a href="inverse">Inverse</a></pre></pre></pre></pre></a><pre>
+
+
+   [1]     [2]     [3]
+
+<pre><a href="suggest" id="suggest" class="right">suggestion box</a>
+<h3 id="small"><Font size=2><center><Font color=white><script type="text/javascript">
 <!--
 var r_text = new Array ();
 r_text[0] = "...and there were no survivors.";
@@ -324,7 +183,7 @@ r_text[2] = "In fact, i'd probably have another heart attack.";
 r_text[3] = "If you will turn to page 1,672 in your books..";
 r_text[4] = "I have nothing else to do, i'm a secondary chracter.";
 r_text[5] = "That's not a tan, you know! he's actually black!";
-r_text[6] = "I broke both of his legs with a folding chair.";
+r_text[6] = "Broke both of his legs with a folding chair.";
 r_text[7] = "Are you idiot?";
 r_text[8] = "Tell me now, and i'll only break your spine!";
 r_text[9] = "I've just been in a car accident and my daughter is bleeding to death!";
@@ -335,46 +194,29 @@ r_text[12] = "Don't quote me. And don't quote me on not wanting to be quoted, ei
 var i = Math.floor(13*Math.random())
 document.write('<br><font color=white>[Quote Of The Day] <small><font color=yellow>(refresh for another)</small></font><br> <span style="color: cyan; font-weight: bold;">' + r_text[i] + '</span></font>');
 //-->
-</script>        
-      </div></div>
-      <div id="menubar">
-        <ul id="menu">
-          
-          <li class="selected"><a href="therpg">The RPG</a></li>
-          <li><a href="kpage">Kailey's Page</a></li>
-          <li><a href="doors">A Secret Puzzle</a></li>
-          <li><a href="suggest">suggestion box</a></li>
-          <li><a href="editor">ASCII Editable Google Page</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="site_content">
-      <div class="sidebar">
+</script>
+</font>
+</div></box>
+<div class="row">  <div class="side"><font color=yellow>[Affiliated Sites]</font><h3>none yet!</h3>
+<b><font color=yellow>[other cool sites]</font></b>
+    <pre><h5>windows93.net
 
-        <h3>Latest News</h3>
-        <h4><b>[ nope ]</b></h4>
-<p>nothing to report!</p>
-        <h3>my other crap</h3>
-        <ul>
-          <li><a href="cyanweb">cyanweb</a></li>
-          <li><a href="areyouok">Are You OK?</a></li>
-          <li><a href="stickos">StickOS</a></li>
-          <li><a href="touyube">TouYube </a></li>
-        </ul>
-   
-      </div>
-      <div id="content">
-        
-        <h1>Disgusting!</h1>
-        <p>i might write something here at some point, but not today.</p>
+wwwwwwwww.jodi.org
 
-LINKS: <a href="https://discord.gg/kWmKFec">DISCORD</a> 
-        </ul>
-      </div>
-    </div>
-    <div id="footer"><b>O<br>
-/|\<br>
-/ \</div>
-  </div>
+iamawesome.com
+
+hasthelargehadroncolliderdestroyedtheworldyet.com
+
+cemetech.net</h5>
+    
+  </div><div class="main"><pre><h3><font color=black> O__    O
+/|     /|\
+/ \    / \
+</div>
+  
+
+<pre>
+</pre>
+
 </body>
 </html>
