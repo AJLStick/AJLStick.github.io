@@ -1,25 +1,32 @@
-    <!DOCTYPE html>
+<!DOCTYPE html >
 <html>
 <head>
-    <title>STOP RIGHT THERE!</title>
+<title>MASHLOG LOGIN FORM</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-<form>
-    <label for="pswd">password: </label>
-    <input type="password" id="pswd">
-    <input type="button" value="Submit" onclick="checkPswd();" />
-</form>
-<script type="text/javascript">
-    function checkPswd() {
-        var confirmPassword = "ajl";
-        var password = document.getElementById("pswd").value;
-        if (password == confirmPassword) {
-             window.location="secret.html";
-        }
-        else{
-            alert("WRONG!");
-        }
-    }
-</script>
+<body id="body_bg">
+<div <div align="center">
+
+<h3>MASHLOG LOGIN FORM</h3>
+    <form id="login-form" method="post" action="authen_login.php" >
+        <table border="0.5" >
+            <tr>
+                <td><label for="user_id">User Name</label></td>
+                <td><input type="text" name="user_id" id="user_id"></td>
+            </tr>
+            <tr>
+                <td><label for="user_pass">Password</label></td>
+                <td><input type="password" name="user_pass" id="user_pass"></input></td>
+            </tr>
+			
+            <tr>
+				
+                <td><input type="submit" value="Submit" />
+                <td><input type="reset" value="Reset"/>
+				
+            </tr>
+        </table>
+    </form>
+		</div>
 </body>
 </html>
