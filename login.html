@@ -37,31 +37,31 @@ body{
             </p>  
             <p>     
                 <input type =  "submit" id = "btn" value = "Login" />  
-            </p>  
+            </p>  <p id="error"></p>
         </form>  
-    </div>  
-    // validation for empty field   
-    <script>  
+    </div>
+
+<script>  
             function validation()  
             {  
                 var id=document.f1.user.value;  
                 var ps=document.f1.pass.value;  
                 if(id.length=="" && ps.length=="") {  
-                    alert("User Name and Password fields are empty");  
+                    document.getElementById("demo").innerHTML = "you didn't type anything!";
                     return false;  
                 }  
                 else  
                 {  
                     if(id.length=="") {  
-                        alert("User Name is empty");  
+                        document.getElementById("error").innerHTML = "no username!"; 
                         return false;  
                     }   
                     if (ps.length=="") {  
-                    alert("Password field is empty");  
+                    document.getElementById("error").innerHTML = "no password!"; 
                     return false;  
                     }  
                 }                             
             }  
-        </script>  
+        </script>
 </body>     
 </html>  
