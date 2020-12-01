@@ -1,17 +1,18 @@
 
 
+
 <html>  
 <head>  
     <title>login</title>    
     <style>
 body{   
-    background: #eee;  
+    background: silver;  
 }  
 #frm{  
-    border: solid gray 1px;  
+    border: solid black 2px;  
     width:25%;  
     border-radius: 2px;  
-    margin: 120px auto;  
+
     background: white;  
     padding: 50px;  
 }  
@@ -20,10 +21,17 @@ body{
     background: #337ab7;  
     
 }  
+out{display:inline;}
 
 </style> 
-</head>  
-<body><div id = "frm"><pre><center><h1>Login</h1></pre>  
+</head>
+<body><center><pre>
+
+
+      ___
+   <font color=orange>O</font>  | |
+  <font color=green>/|\</font> |,|
+  <font color=blue>/ \</font> | |<div id = "frm"><center><h1>Login</h1>
         <form name="f1" action = "http://ajlstick.42web.io/authentication.php" onsubmit = "return validation()" method = "POST">  
             <p>  
                 <Center><pre><label> Username: </label></pre>  
@@ -31,12 +39,12 @@ body{
             </p>  
             <p>  
                 <pre><label> Password: </label></pre>  
-                <input type = "password" id ="pass" name  = "pass" />  
+                <input type = "password" id ="pass" name  = "pass" />
             </p>  
             <p>     
                 <input type =  "submit" id = "btn" value = "Login" />  
             </p>  <p id="error"></p>
-        </form>  
+        </form>
     </div></center>
 
 <script>  
@@ -61,5 +69,5 @@ body{
                 }                             
             }  
         </script>
-</body>     
+</out></body>     
 </html>  
