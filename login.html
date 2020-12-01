@@ -1,7 +1,8 @@
 
+
 <html>  
 <head>  
-    <title>test login</title>    
+    <title>login</title>    
     <style>
 body{   
     background: #eee;  
@@ -17,29 +18,26 @@ body{
 #btn{  
     color: #fff;  
     background: #337ab7;  
-    padding: 7px;  
-    margin-left: 70%;  
+    
 }  
 
 </style> 
 </head>  
-<body>  
-    <div id = "frm">  
-        <h1>Login</h1>  
+<body><div id = "frm"><pre><center><h1>Login</h1></pre>  
         <form name="f1" action = "http://ajlstick.42web.io/authentication.php" onsubmit = "return validation()" method = "POST">  
             <p>  
-                <label> UserName: </label>  
-                <input type = "text" id ="user" name  = "user" />  
+                <Center><pre><label> Username: </label></pre>  
+                <input type = "text" id ="user" name  = "user" /> 
             </p>  
             <p>  
-                <label> Password: </label>  
+                <pre><label> Password: </label></pre>  
                 <input type = "password" id ="pass" name  = "pass" />  
             </p>  
             <p>     
                 <input type =  "submit" id = "btn" value = "Login" />  
             </p>  <p id="error"></p>
         </form>  
-    </div>
+    </div></center>
 
 <script>  
             function validation()  
