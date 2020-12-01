@@ -5,8 +5,9 @@
 <head>  
     <title>login</title>    
     <style>
-body{   
-    background: silver;  
+body, #btn{   
+    background: silver; 
+font-family:monospace, monospace, monospace; 
 }  
 #frm{  
     border: solid black 2px;  
@@ -28,17 +29,17 @@ out{display:inline;}
 <body><center><pre>
 
 
-      ___
-   <font color=orange>O</font>  | |
-  <font color=green>/|\</font> |,|
-  <font color=blue>/ \</font> | |<div id = "frm"><center><h1>Login</h1>
+            ___
+   <font color=orange>O</font>        | |
+  <font color=green>/|\</font> <font color=yellow>----></font> |,|
+  <font color=blue>/ \</font>       | |</pre><div id = "frm"><center><h1>Login</h1>
         <form name="f1" action = "http://ajlstick.42web.io/authentication.php" onsubmit = "return validation()" method = "POST">  
             <p>  
-                <Center><pre><label> Username: </label></pre>  
+                <Center><label> Username: </label> 
                 <input type = "text" id ="user" name  = "user" /> 
             </p>  
             <p>  
-                <pre><label> Password: </label></pre>  
+                <label> Password: </label>
                 <input type = "password" id ="pass" name  = "pass" />
             </p>  
             <p>     
