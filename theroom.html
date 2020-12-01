@@ -5,7 +5,7 @@
  
 function update()
 {
-    $.post("server.php", {}, function(data){ $("#screen").val(data);});  
+    $.post("http://ajlstick.42web.io/server.php", {}, function(data){ $("#screen").val(data);});  
  
     setTimeout('update()', 1000);
 }
@@ -19,7 +19,7 @@ function()
      $("#button").click(    
       function() 
       {         
-       $.post("server.php", 
+       $.post("http://ajlstick.42web.io/server.php", 
     { message: $("#message").val()},
     function(data){ 
     $("#screen").val(data); 
