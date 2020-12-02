@@ -1,12 +1,11 @@
 <Script>
-        //When page loads
     $( document ).ready(function() {
     var spinning = false;
     var cash = 100;
     var betType = 0;
     var charType = ["O","X","0"] ;
     var slots = [["O","X","O"],["X","O","0"],["0","0","X"]];
-    //this funtion needs to be called in order to display any change in the slots
+    
     function init_slots () {
         $("#row1").text(slots[0][0] + " " + slots [0][1] + " " + slots[0][2]);
         $("#row2").text(slots[1][0] + " " + slots [1][1] + " " + slots[1][2]);
@@ -36,8 +35,7 @@
         }
         else {
                 if (column == 2) {
-                    //checks if there are 3 of a kind in a row
-                    for (var z = 0; z < 3; z ++) {
+                                        for (var z = 0; z < 3; z ++) {
                         if (slots[z][0] === "0" && slots[z][1] === "0" && slots[z][2] == "0") {
                             $("#victoryMessage").text("jackpot! 3 0\'s = bet x 5");
                             $("#instructions").css("font-size", "30");
@@ -72,10 +70,9 @@
                   column ++;
                 }
         }
-        },//end of set interval's first argument 
-        Math.floor(Math.random() * 30 + 95));//time in miliseconds
-    }
-    //this function is for every button 
+        },
+        Math.floor(Math.random() * 30 + 95));    }
+    
     $("button").on('click touch',function() {
         $("#win").text("10k = game win");
     });
@@ -152,7 +149,7 @@ html,button{font-family:monospace, monospace; border:1px solid black;}
 <html>
     
     <head>
-        <title>SLOTS!(?)</title>
+        <title>SLOTS0(?)</title>
         <style src = style.css> </style>
         <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     </head>
