@@ -1,74 +1,11 @@
+<style>
+html{background:black; color:white;}
+</style><pre><center>
+<form method="post">
+Username:
+<input style="border:1px solid white; background:black;color:white" type="text" name="username" /><br />
+Password:
+<input style="border:1px solid white; background:black;color:white" type="password" name="password" />
 
-
-
-<html>  
-<head>  
-    <title>login</title>    
-    <style>
-body, #btn{   
-    background: silver; 
-font-family:monospace, monospace, monospace; 
-}  
-#frm{  
-    border: solid black 2px;  
-    width:25%;  
-    border-radius: 2px;  
-
-    background: white;  
-    padding: 50px;  
-}  
-#btn{  
-    color: #fff;  
-    background: #337ab7;  
-    
-}  
-out{display:inline;}
-
-</style> 
-</head>
-<body><center><pre>
-
-
-            ___
-   <font color=orange>O</font>        | |
-  <font color=green>/|\</font> <font color=yellow>----></font> |,|
-  <font color=blue>/ \</font>       | |</pre><div id = "frm"><center><h1>Login</h1>
-        <form name="f1" action = "http://ajlstick.42web.io/authentication.php" onsubmit = "return validation()" method = "POST">  
-            <p>  
-                <Center><label> Username: </label> 
-                <input type = "text" id ="user" name  = "user" /> 
-            </p>  
-            <p>  
-                <label> Password: </label>
-                <input type = "password" id ="pass" name  = "pass" />
-            </p>  
-            <p>     
-                <input type =  "submit" id = "btn" value = "Login" />  
-            </p>  <p id="error"></p>
-        </form>
-    </div></center>
-
-<script>  
-            function validation()  
-            {  
-                var id=document.f1.user.value;  
-                var ps=document.f1.pass.value;  
-                if(id.length=="" && ps.length=="") {  
-                    document.getElementById("demo").innerHTML = "you didn't type anything!";
-                    return false;  
-                }  
-                else  
-                {  
-                    if(id.length=="") {  
-                        document.getElementById("error").innerHTML = "no username!"; 
-                        return false;  
-                    }   
-                    if (ps.length=="") {  
-                    document.getElementById("error").innerHTML = "no password!"; 
-                    return false;  
-                    }  
-                }                             
-            }  
-        </script>
-</out></body>     
-</html>  
+<input style="border:1px solid blue; background:black;color:white" type='submit' name='submit' />
+    </form>
