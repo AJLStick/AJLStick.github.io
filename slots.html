@@ -1,22 +1,20 @@
-
-    <head><script>
-   
-    //When page loads
+<Script>
+        //When page loads
     $( document ).ready(function() {
     var spinning = false;
-    var cash = 500;
+    var cash = 100;
     var betType = 0;
-    var charType = ["O","X","Z"] ;
-    var slots = [["O","X","Z"],["Z","O","X"],["X","Z","O"]];
+    var charType = ["O","X","0"] ;
+    var slots = [["O","X","O"],["X","O","0"],["0","0","X"]];
     //this funtion needs to be called in order to display any change in the slots
     function init_slots () {
         $("#row1").text(slots[0][0] + " " + slots [0][1] + " " + slots[0][2]);
         $("#row2").text(slots[1][0] + " " + slots [1][1] + " " + slots[1][2]);
         $("#row3").text(slots[2][0] + " " + slots [2][1] + " " + slots[2][2]);
     }
-    //this funtion displays the current value in cash i.e. there is a change in cash and you want the player to be able to see that
+   
     function init_cash () {
-        $("#money").text("$" + " " + cash);
+        $("#money").text("$" + "" + cash);
     }
     init_slots();
     init_cash();
@@ -28,9 +26,9 @@
         var spinTimer = setInterval(function(){ 
         if (random_num_spins[column] > 0) {
         for (var i = 0; i < 3; i ++) {
-            if (slots[i][column] === "O") {slots[i][column] = "Z"; continue; }
+           if (slots[i][column] === "O") {slots[i][column] = "0"; continue; }
             if (slots[i][column] === "X") {slots[i][column] = "O"; continue; }
-            if (slots[i][column] === "Z") {slots[i][column] = "X"; continue; }
+            if (slots[i][column] === "0") {slots[i][column] = "X"; continue; }
         }
         init_slots();
         random_num_spins[column] --;
@@ -40,33 +38,33 @@
                 if (column == 2) {
                     //checks if there are 3 of a kind in a row
                     for (var z = 0; z < 3; z ++) {
-                        if (slots[z][0] === "O" && slots[z][1] === "O" && slots[z][2] == "O") {
-                            $("#victoryMessage").text("You hit the jackpot! 3 !\'s = bet X 5");
-                            $("#instructions").css("font-size", "14");
-                            $("#instructions").text("You won $" + 5*betType + "!");
+                        if (slots[z][0] === "0" && slots[z][1] === "0" && slots[z][2] == "0") {
+                            $("#victoryMessage").text("jackpot! 3 0\'s = bet x 5");
+                            $("#instructions").css("font-size", "30");
+                            $("#instructions").text("won " + 5*betType + "!");
                             cash += 5*betType;
                          }
                         if (slots[z][0] === "X" && slots[z][1] === "X" && slots[z][2] == "X") {
-                            $("#victoryMessage").text("You hit the jackpot! 3 $\'s = bet X 10");
-                            $("#instructions").css("font-size", "14");
-                            $("#instructions").text( "You won $" + 10*betType + "!");
+                            $("#victoryMessage").text("jackpot! [3 $\'s = bet x 10]");
+                            $("#instructions").css("font-size", "30");
+                            $("#instructions").text( "won " + 10*betType + "!");
                             cash += 10*betType;
                          }
-                        if (slots[z][0] === "Z" && slots[z][1] === "Z" && slots[z][2] == "Z") {
-                            $("#instructions").css("font-size", "14");
-                            $("#victoryMessage").text("You hit the jackpot! 3 $\'s = bet X 15");
-                            $("#instructions").text( "You won $" + 15*betType + "!");
+                        if (slots[z][0] === "O" && slots[z][1] === "O" && slots[z][2] == "O") {
+                            $("#instructions").css("font-size", "30");
+                            $("#victoryMessage").text("jackpot! [3 $\'s = bet x 15]");
+                            $("#instructions").text( "won " + 15*betType + "!");
                             cash += 15*betType;
                          }
                          init_cash();
                  }
             column = 0;
             spinning = false;
-            if (cash <= 0) {
-                $("#lose").text( "you lose!");
+            if (cash< 0) {
+                alert("you're broke. you lose.");
             }
             else if (cash >= 10000) {
-                $("#win").text( "you won!!!1!");
+                alert("you won!")
             }
             clearInterval(spinTimer);
                 }
@@ -79,7 +77,7 @@
     }
     //this function is for every button 
     $("button").on('click touch',function() {
-        $("#win").text("10k cash = win!!!");
+        $("#win").text("10k = game win");
     });
      $("button.bet1").on('click touch',function() {
          
@@ -88,16 +86,16 @@
          betType = 1;
          cash -= 1;
          init_cash();
-         $("#instructions").text("get three in a row to win!");
-         $("#instructions").css("font-size", "14");
+         $("#instructions").text("SPINNING!");
+         $("#instructions").css("font-size", "20");
          $("#victoryMessage").empty();
-         random_num_spins =[getRandomInt(3,11),getRandomInt(3,9),getRandomInt(2,7)];
+         random_num_spins =[getRandomInt(3,11),getRandomInt(3,9),getRandomInt(2,6)];
          spin();
          spinning = true;
              }
              else
              {
-                 $("#broke").text("you're broke! leave!");
+                 document.getElementById("no").innerHTML = "<font color=red>you're broke!</font>";
              }
          }
 });
@@ -108,15 +106,15 @@ $("button.bet10").on('click touch',function() {
          betType = 10;
          cash -= 10;
          init_cash();
-         $("#instructions").text("3 in a row to win!");
-         $("#instructions").css("font-size", "14");
+         $("#instructions").text("SPINNING!");
+         $("#instructions").css("font-size", "20");
          $("#victoryMessage").empty();
-         random_num_spins =[getRandomInt(4,12),getRandomInt(4,10),getRandomInt(2,7)];
+         random_num_spins =[getRandomInt(4,12),getRandomInt(4,10),getRandomInt(2,6)];
          spin();
          spinning = true;
          }
          else {
-             $("#broke").text("you're broke! leave!");
+             document.getElementById("no").innerHTML = "<font color=red>you're broke!</font>";
          }
          }
          
@@ -128,15 +126,15 @@ $("button.bet100").on('click touch',function() {
          betType = 100;
          cash -= 100;
          init_cash();
-         $("#instructions").text("3 in a row to win!");
-         $("#instructions").css("font-size", "14");
+         $("#instructions").text("SPINNING!");
+         $("#instructions").css("font-size", "20");
          $("#victoryMessage").empty();
-         random_num_spins =[getRandomInt(5,13),getRandomInt(5,11),getRandomInt(2,7)];
+         random_num_spins =[getRandomInt(5,13),getRandomInt(5,11),getRandomInt(2,6)];
          spin();
          spinning = true;
          }
          else {
-             $("#broke").text("you're broke! leave!");
+             document.getElementById("no").innerHTML = "<font color=red>you're broke!</font>";
              }
          }
          
@@ -146,33 +144,42 @@ $("button.bet100").on('click touch',function() {
 });
     
     
-
-</script>
+    </script>
 <style>
-
-.container{
-    display: inline-block;
-}
-
-button{border:1px solid black;}
-
-#slots{border:2px solid black; width:50px;}
-
-#money{border:2px solid black; width:50px; padding-top:4px; padding-bottom:4px;}
-
-
-
-
-
-
-.bet100{
-       margin-bottom: 20px;
-}
+html,button{font-family:monospace, monospace; border:1px solid black;}
 </style>
-        <title>Slots</title>
-    </head><Center>
-    <body><pre><p id="broke"></p><p id ="win" class = gold-text></p><text id = "lose"></text><div id = "instuct-div"><p id = "instructions" >SLOTS</p></div><div class = "container"><div id = "buttons"><button class = "bet1">Bet 1</button> <button class = "bet10" >Bet 10</button>
-
-<button class = "bet100" >Bet 100</button></div><div id = "slot-div"><font color=green><b><p><p class = gold-text id = "money">money goes here, if it doesn't show, use a different browser, you dunce</p></font></p><font color=orange><p id = "slots" style="list-style: none;"><text id = "row1">Row 1</text></font><br><font color=blue><text id = "row2">Row 2</text></font><br><font color=red><text id = "row3">Row 3</text></font></text></div></div><br><p id =  "victoryMessage">$10k = win!!!!!</p>
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>SLOTS0(?)</title>
+        <style src = style.css> </style>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    </head>
+    <body><center>
+        <div id = "instuct-div">
+        <p id = "instructions" ><pre>SLOTS!
+GET THREE IN A ROW TO WIN!</pre>
+        </div>
+        <div class = "container">
+            <div id = "buttons">
+            <button class = "bet1">$1</button>
+        <button class = "bet10" >$10 </button>
+         <button class = "bet100" >$100 </button>
+          </div>
+          <div id = "slot-div">
+            <p>
+            <font color=green><span class = text id = "money"> ------- </span></font>
+            <br>
+             <span id =  "victoryMessage">10k total cash = game win   </span></p>
+                <p id = "slots" style="list-style: none;">
+         <span id = "row1">R1</span> <br>
+         <span id = "row2">R2</span> <br>
+         <span id = "row3">R3</span>
+         </p> 
+         </div>
+        </div>
+<div id="no"></div>
+        
     </body>
 </html>
