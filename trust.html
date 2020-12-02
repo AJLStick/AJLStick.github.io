@@ -1,5 +1,33 @@
 <style>
-html{background:teal;}
+@keyframes bgcolor {
+    0% {
+        background-color: blue
+    }
+
+    30% {
+        background-color: purple
+    }
+
+    60% {
+        background-color: yellow
+    }
+
+    90% {
+        background-color: green
+    }
+
+    100% {
+        background-color: orange
+    }
+}
+
+html {
+    -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+html{background-color:silver}
 </style>
 <pre><center>
 <marquee width=24 height=14 behavior=alternate>O</marquee>
