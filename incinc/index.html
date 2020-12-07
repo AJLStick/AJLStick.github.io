@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+
+<style>
+input
+{border:1px solid black;}
+</style>
+
+<script type ="text/javascript">
+ var x = 0;
+ function count() {
+  x += 1;
+  document.getElementById( "count" ).value = x;
+ };
+//if statement
+if (x >= 10) {
+ document.getElementById("stick").innerHTML = " O<br>/|\<br>/ \";
+}
+</script>
+</head>
+<body><center><pre>
+ <input type = "button" value = "Click" onclick = "count()"/>
+
+ <input type = "button" id = "count" type = "text" />
+
+</body>
+</html>
