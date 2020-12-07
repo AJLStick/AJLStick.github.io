@@ -1,10 +1,12 @@
 
+
 <!DOCTYPE html>
 <head>
 <style>
 bl{color:blue}
 gr{color:green}
 re{color:red}
+#lose{background:red;color:white}
 #bg{background:blue; color:white;}
 input, button{border:2px solid black;}
 html, input, button{font-family: monospace,monospace;}
@@ -13,15 +15,24 @@ html, input, button{font-family: monospace,monospace;}
 var intervalID = window.setInterval(myCallback, 1000);
 function myCallback() {
 x += auto;
- document.getElementById( "counter" ).innerHTML = x;
+ document.getElementById( "counter" ).innerHTML = "you have " + x;
+ document.getElementById( "lost" ).innerHTML = "you have lost " + y;
 };
  var x = 0;
+var y = 0;
  var earn = 1;
 var auto = 0;
+function lose() {
+if (x >= 15) { 
+x = x - 15;
+y = y + 15;
+ document.getElementById( "lost" ).innerHTML = "you have lost " + y;
+}
+}
  function count() {
   x += earn;
-  document.getElementById( "counter" ).innerHTML = x;
-  document.getElementById( "earn" ).innerHTML = "<bl>" + earn + "</bl> / click</p>";
+ document.getElementById( "counter" ).innerHTML = "you have " + x;
+ document.getElementById( "earn" ).innerHTML = "<bl>" + earn + "</bl> / click</p>";
 if (x >= 20) {
   document.getElementById( "status" ).innerHTML = "<pre><button>Buy Axe <gr>[20]</gr><bl>+1</bl></button>";
    };
@@ -36,6 +47,10 @@ if (x >= 1000) {
 
 if (x >= 5000) {
   document.getElementById( "status4" ).innerHTML = "<pre> O<br>/|\\<br>/ \\";
+   };
+// stick changing
+if (y >= 20) {
+  document.getElementById( "stick" ).innerHTML = "<pre> O<br>/|\\<br>/ \\";
    };
 }
 </script>
@@ -75,14 +90,27 @@ document.getElementById( "counter" ).innerHTML = x;
 CLICK TO GAIN
 
 </button>
-<p id="counter">0</p>
-<p id="earn"></p><p id="auto"></p></body></pre><center>
+<button id="lose" onclick="lose()">CLICK TO LOSE</button>
+<p id="counter">0</p><p id="lost"></p><p id="earn"></p><p id="auto"></p></body></pre><center>
 <p id="status" onclick="buyaxe()"></button>
 <p id="status2" onclick="buychainsaw()"></p>
 <p id="status3" onclick="buyauto()"></p>
+</center><p id="stick"></p><center>
 <p id="status4"></p>
 <pre>
+
+
+
+
+
+
+
+
+
+
 Incremental Inc. v0.1 by AJLStick
 </html>
+
+
 
 
