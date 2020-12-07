@@ -1,27 +1,88 @@
 <!DOCTYPE html>
 <head>
-
 <style>
-input
-{border:1px solid black;}
+bl{color:blue}
+gr{color:green}
+#bg{background:blue; color:white;}
+input, button{border:2px solid black;}
+html, input, button{font-family: monospace,monospace;}
 </style>
-
 <script type ="text/javascript">
+var intervalID = window.setInterval(myCallback, 1000);
+function myCallback() {
+x += auto;
+ document.getElementById( "counter" ).innerHTML = x;
+};
  var x = 0;
+ var earn = 1;
+var auto = 0;
  function count() {
-  x += 1;
-  document.getElementById( "count" ).value = x;
- };
-//if statement
-if (x >= 10) {
- document.getElementById("stick").innerHTML = " O<br>/|\<br>/ \";
+  x += earn;
+  document.getElementById( "counter" ).innerHTML = x;
+  document.getElementById( "earn" ).innerHTML = "<gr>" + earn + "</gr> / click</p>";
+if (x >= 20) {
+  document.getElementById( "status" ).innerHTML = "<pre><button>Buy Axe <gr>[20]</gr><bl>+1</bl></button>";
+   };
+
+if (x >= 50) {
+  document.getElementById( "status2" ).innerHTML = "<button>Buy Chainsaw <gr>[50]</gr><bl>+5</bl></button>";
+   };
+
+if (x >= 1000) {
+  document.getElementById( "status3" ).innerHTML = "<button>Buy AUTO-A.X.E 2000 <gr>[100]</gr><bl>+1</bl></button>";
+   };
+
+if (x >= 5000) {
+  document.getElementById( "status4" ).innerHTML = "<pre> O<br>/|\\<br>/ \\";
+   };
 }
 </script>
+<Script>
+function buyaxe() {
+if (x >= 20) {
+x = x - 20;
+earn += 1;
+document.getElementById( "counter" ).innerHTML = x;
+  document.getElementById( "earn" ).innerHTML = "<gr>" + earn + "</gr> / click</p>";
+}
+}
+function buychainsaw() {
+if (x >= 50) {
+x = x - 50;
+earn += 5;
+
+document.getElementById( "counter" ).innerHTML = x;
+  document.getElementById( "earn" ).innerHTML = "<gr>" + earn + "</gr> / click</p>";
+}
+}
+function buyauto() {
+if (x >= 100) {
+x = x - 100;
+auto += 1;
+document.getElementById( "counter" ).innerHTML = x;
+  document.getElementById( "earn" ).innerHTML = "<gr>" + earn + "</gr> / click</p>";
+  document.getElementById( "auto" ).innerHTML = "<bl>" + auto + "</bl> / second</p>";
+}
+}
+</script>
+
+
+
 </head>
-<body><center><pre>
- <input type = "button" value = "Click" onclick = "count()"/>
+<body><pre><center><button id="bg" onclick = "count()">
+CLICK TO GAIN
 
- <input type = "button" id = "count" type = "text" />
-
-</body>
+</button>
+<p id="counter">0</p>
+<p id="earn"></p>
+<p id="auto"></p>
+</body></pre><center>
+<p id="status" onclick="buyaxe()"></button>
+<p id="status2" onclick="buychainsaw()"></p>
+<p id="status3" onclick="buyauto()"></p>
+<p id="status4"></p>
+<pre>
+Incremental Inc. v0.1 by AJLStick
 </html>
+
+
