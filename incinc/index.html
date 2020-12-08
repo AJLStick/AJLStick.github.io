@@ -44,14 +44,17 @@ if (x >= 20) {
   document.getElementById( "status" ).innerHTML = "<pre><button>Buy Axe <gr>[20]</gr><bl>+1</bl></button>";
    };
 
-if (x >= 50) {
+if (x >= 100) {
   document.getElementById( "status2" ).innerHTML = "<button>Buy Chainsaw <gr>[50]</gr><bl>+5</bl></button>";
    };
 
 if (x >= 1000) {
   document.getElementById( "status3" ).innerHTML = "<button>Buy AUTO-A.X.E 2000 <gr>[100]</gr><re>+1</re></button>";
+//building
+if (x >= 1000) {
+  document.getElementById( "status4" ).innerHTML = "<button>Buy Building<gr>[100]</gr><re>+5</re></button>";
    };
-
+};
 if (f == 1) {
   document.getElementById( "cheat1" ).innerHTML = "<button>flip coin<gr>[≥]</gr></button>";
    };
@@ -139,7 +142,7 @@ CLICK TO GAIN
 <p id="status2" onclick="buychainsaw()"></p>
 <p id="status3" onclick="buyauto()"></p>
 </center><p id="stick"></p><center>
-<p id="status4"></p>
+<p id="status4" onclick="buybuilding()"></p>
 <p id="buycheat" onclick="buycheats()"></p>
 <p id="cheat1" onclick="flip()"></p>
 <p id="result"></p>
