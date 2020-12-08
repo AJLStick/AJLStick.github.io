@@ -6,6 +6,38 @@
 <head>
 <style>
 
+#shadowBox {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: white;
+    /* Black w/opacity/see-through */
+}
+
+.rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    font-family: monospace;
+    letter-spacing: 5px;
+}
+.rainbow_text_animated {
+    background: linear-gradient(to right, blue, red , yellow, green, cyan);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
 bl{color:blue}
 gr{color:green}
 re{color:red}
@@ -137,7 +169,8 @@ setTimeout(function(){
 }
 </script>
 </head>
-<body><pre><center><button id="bg" onclick = "count()">
+<body><pre>
+<div id="shadowBox"><h3 class="rainbow rainbow_text_animated">Incremental, Inc.</h3></div><center><button id="bg" onclick = "count()">
 CLICK TO GAIN
 
 </button>
