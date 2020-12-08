@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <head>
 <style>
@@ -19,8 +20,11 @@ x += auto;
  document.getElementById( "counter" ).innerHTML = "you have " + x;
  document.getElementById( "lost" ).innerHTML = "you have lost " + y;
 };
- var x = 0;
+ var x = 9999999;
 var y = 0;
+var f = 0;
+var c = 0;
+var placeholder = 0;
  var earn = 1;
 var auto = 0;
 function lose() {
@@ -28,7 +32,7 @@ if (x >= 15) {
 x = x - 15;
 y = y + 15;
  document.getElementById( "lost" ).innerHTML = "you have lost " + y;
-}
+};
 }
  function count() {
   x += earn;
@@ -46,13 +50,17 @@ if (x >= 1000) {
   document.getElementById( "status3" ).innerHTML = "<button>Buy AUTO-A.X.E 2000 <gr>[100]</gr><re>+1</re></button>";
    };
 
-if (x >= 5000) {
-  document.getElementById( "status4" ).innerHTML = "<pre> O<br>/|\\<br>/ \\";
+if (f == 1) {
+  document.getElementById( "cheat1" ).innerHTML = "<button>flip coin<gr>[≥]</gr></button>";
    };
 // stick changing
 if (y >= 20) {
   document.getElementById( "stick" ).innerHTML = "<pre> O<br>/|\\<br>/ \\";
    };
+//cheat menu button
+if (c == 0) {
+  document.getElementById( "buycheat" ).innerHTML = "<button>buy cheats<gr>[9,999,999]</gr></button>";
+    }
 }
 </script>
 <Script>
@@ -82,10 +90,42 @@ auto += 1;
   document.getElementById( "auto" ).innerHTML = "<re>" + auto + "</re> / second</p>";
 }
 }
+function buycheats() {
+if (x >= 9999999 && c == 0) {
+x = x - 9999999;
+c = 1;
+f = 1;
+ document.getElementById( "counter" ).innerHTML = "you have " + x;
+  document.getElementById( "earn" ).innerHTML = "<bl>" + earn + "</bl> / click</p>";
+  document.getElementById( "cheat1" ).innerHTML = "<button>flip coin<gr>[≥20000]</gr></button>";
+// ---
+
+ document.getElementById( "buycheat" ).innerHTML = "cheats bought";
+};
+}
 </script>
+<script>
+//coin flip
+function flip() {
+if (x >= 2 && f == 1 && x >= 20000) {
 
+var prob1 = Math.floor(Math.random() * 2) +1;
 
+var prob2 = Math.floor(Math.random() * 2) +1;
 
+if( prob1 === prob2){
+   document.getElementById( "result" ).innerHTML = "<re>TAILS!</re>";
+x = (Math.round(x / 2));
+ }else{
+   document.getElementById( "result" ).innerHTML = "<bl>HEADS!</bl>";
+x = (Math.round(x * 2));
+}
+setTimeout(function(){
+      document.getElementById( "result" ).innerHTML = " _ ";
+}, 500);
+}
+}
+</script>
 </head>
 <body><pre><center><button id="bg" onclick = "count()">
 CLICK TO GAIN
@@ -98,6 +138,10 @@ CLICK TO GAIN
 <p id="status3" onclick="buyauto()"></p>
 </center><p id="stick"></p><center>
 <p id="status4"></p>
+<p id="buycheat" onclick="buycheats()"></p>
+<p id="cheat1" onclick="flip()"></p>
+<p id="result"></p>
+
 <pre>
 
 
