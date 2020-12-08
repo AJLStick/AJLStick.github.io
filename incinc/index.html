@@ -4,12 +4,15 @@
 
 <!DOCTYPE html>
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <style>
+#console{background:black;color:lime;border:8px solid silver;display:inline-block;}
 
 #shadowBox {
     background-color: rgb(0, 0, 0);
     /* Fallback color */
-    background-color: white;
+    background-color: transparent;
     /* Black w/opacity/see-through */
 }
 
@@ -38,27 +41,48 @@
         background-position: 100% 0;
     }
 }
+.dark-mode {
+  background-color: black;
+  color: white;
+
+}
 bl{color:blue}
 gr{color:green}
 re{color:red}
 #lose{background:red;color:white}
 #bg{background:blue; color:white;}
-input, button{border:2px solid black;}
-html, input, button{
-  font-family: VT323;
-  src: url(VT323-Regular.ttf);
+input, button{border:4px solid black;}
+html, input, button, p{
+font-family: 'VT323', monospace;
+font-size:30px;
 }
-
 </style>
+<script>
+function dark() {
+//  ---
+if(dm == 1) {
+dm = 0;
+ document.getElementById( "dm" ).innerHTML = "DM:<re>O</re>";
+}else{
+dm = 1;
+ document.getElementById( "dm" ).innerHTML = "DM:<bl>I</bl>";
+}
+// ---
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
 <script type ="text/javascript">
  var x = 25;
 
 var intervalID = window.setInterval(myCallback, 1000);
 function myCallback() {
 x += auto;
+
  document.getElementById( "counter" ).innerHTML = "you have " + x;
  document.getElementById( "lost" ).innerHTML = "you have lost " + y;
 };
+var dm = 0;
  var x = 25;
 var y = 0;
 var f = 0;
@@ -175,7 +199,9 @@ CLICK TO GAIN
 
 </button>
 <button id="lose" onclick="lose()">CLICK TO LOSE</button>
-<p id="counter">0</p><p id="lost"></p><p id="earn"></p><p id="auto"></p></body></pre><center>
+
+<div id="console"><p id="counter">0</p><p id="lost"></p><p id="earn"></p><p id="auto"></p><p> >                </p></body></pre>
+</div><center><pre>
 <p id="status" onclick="buyaxe()"></button>
 <p id="status2" onclick="buychainsaw()"></p>
 <p id="status3" onclick="buyauto()"></p>
@@ -184,7 +210,8 @@ CLICK TO GAIN
 <p id="buycheat" onclick="buycheats()"></p>
 <p id="cheat1" onclick="flip()"></p>
 <p id="result"></p>
-
+<button onclick="dark()">Darkmode <bl>ON</bl>/<re>OFF</re></button>
+<br><br><p id="dm"></p>
 <pre>
 
 
