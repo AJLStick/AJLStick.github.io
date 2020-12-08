@@ -156,6 +156,15 @@ auto += 1;
   document.getElementById( "auto" ).innerHTML = "<re>" + auto + "</re> / second</p>";
 }
 }
+function buybuilding() {
+if (x >= 1000) {
+x = x - 1000;
+auto += 5;
+ document.getElementById( "counter" ).innerHTML = "you have " + x;
+  document.getElementById( "earn" ).innerHTML = "<bl>" + earn + "</bl> / click</p>";
+  document.getElementById( "auto" ).innerHTML = "<re>" + auto + "</re> / second</p>";
+}
+}
 function buycheats() {
 if (x >= 9999999 && c == 0) {
 x = x - 9999999;
