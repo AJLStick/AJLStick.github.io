@@ -2,15 +2,16 @@
 
 
 
+
 <!DOCTYPE html>
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <style>
-#console{background:black;color:lime;border:8px solid silver;display:inline-block;}
-
+#console{background:black;color:lime;border:8px solid grey;display:inline-block;}
+html{background:black;}
 #shadowBox {
-    background-color: rgb(0, 0, 0);
+    background-color: transparent;
     /* Fallback color */
     background-color: transparent;
     /* Black w/opacity/see-through */
@@ -42,8 +43,8 @@
     }
 }
 .dark-mode {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 
 }
 bl{color:blue}
@@ -56,16 +57,17 @@ html, input, button, p{
 font-family: 'VT323', monospace;
 font-size:20px;
 }
+#console2{background:black;color:white;border:8px solid silver;display:inline-block;}
 </style>
 <script>
 function dark() {
 //  ---
 if(dm == 1) {
 dm = 0;
- document.getElementById( "dm" ).innerHTML = "DM:<re>O</re>";
+ document.getElementById( "dm" ).innerHTML = "<gr>DM:</gr><re>O</re>";
 }else{
 dm = 1;
- document.getElementById( "dm" ).innerHTML = "DM:<bl>I</bl>";
+ document.getElementById( "dm" ).innerHTML = "<gr>DM:</gr><bl>I</bl>";
 }
 // ---
    var element = document.body;
@@ -113,7 +115,7 @@ if (x >= 1000) {
   document.getElementById( "status3" ).innerHTML = "<button>Buy AUTO-A.X.E 2000 <gr>[100]</gr><re>+1</re></button>";
 //building
 if (x >= 1000) {
-  document.getElementById( "status4" ).innerHTML = "<button>Buy Building<gr>[100]</gr><re>+5</re></button>";
+  document.getElementById( "status4" ).innerHTML = "<button>Buy Building<gr>[1000]</gr><re>+5</re></button>";
    };
 };
 if (f == 1) {
@@ -203,14 +205,10 @@ setTimeout(function(){
 </script>
 </head>
 <body><pre>
-<div id="shadowBox"><h3 class="rainbow rainbow_text_animated">Incremental, Inc.</h3></div><center><button id="bg" onclick = "count()">
-CLICK TO GAIN
-
-</button>
-<button id="lose" onclick="lose()">CLICK TO LOSE</button>
-
+<center><button id="bg" onclick = "count()">CLICK TO GAIN</button>
+<pre
 <div id="console"><p id="counter">loading</p><p id="lost"></p><p id="earn"></p><p id="auto"></p><p> >                </p></body></pre>
-</div><center><pre>
+<Center><button id="lose" onclick="lose()">CLICK TO LOSE</button><pre></div>
 <p id="status" onclick="buyaxe()"></button><p id="status2" onclick="buychainsaw()"></p><p id="status3" onclick="buyauto()"></p>
 </center><p id="stick"></p><center><p id="status4" onclick="buybuilding()"></p><p id="buycheat" onclick="buycheats()"></p>
 <p id="cheat1" onclick="flip()"></p><p id="result"></p>
@@ -218,18 +216,5 @@ CLICK TO GAIN
 <br><br><p id="dm"></p>
 <pre>
 
-
-
-
-
-
-
-
-
-
-Incremental Inc. v0.1 by AJLStick
+<div id="shadowBox"><h3 class="rainbow rainbow_text_animated">Incremental, Inc.</h3><font size=2> v0.1 by AJLStick</div>
 </html>
-
-
-
-
