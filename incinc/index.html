@@ -96,6 +96,7 @@ function lose() {
 if (x >= 15) { 
 x = x - 15;
 y = y + 15;
+ document.getElementById( "counter" ).innerHTML = "you have " + x;
  document.getElementById( "lost" ).innerHTML = "you have lost " + y;
 };
 }
