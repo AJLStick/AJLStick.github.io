@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<style>
+html{font-family:mono; font-size:20px;}
+input{border:none;font-size:20px;}
+#one{width:1px;}
+#two{width:1px;}
+button{border:1px solid black; background:silver;}
+#copied{align:center;}
+</style>
+<body>
+<p>Unicode</p><p id="copied"></p>
+<pre>
+<hr>
+<left id="one"><input type="text" value="ඞ" size="1" id="1">
+<button onclick="copy1()">📋</button></left>
+
+<input type="text" size="1" value="( ͡° ͜ʖ ͡°)" id="2"></right>
+<right id="two"><button onclick="copy1()">📋</button>
+</pre>
+<script>
+function copy1() {
+  var copyText = document.getElementById("1");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("copied").innerHTML = "copied!";
+}
+</script>
+<script>
+function copy2() {
+  var copyText = document.getElementById("2");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementByID("copied").innerHTML = "copied!";
+}
+</script><script>
+function copy3() {
+  var copyText = document.getElementById("3");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementByID("copied").innerHTML = "copied!";
+}
+</script><script>
+function copy4() {
+  var copyText = document.getElementById("4");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementByID("copied").innerHTML = "copied!";
+}
+</script>
+
+</body>
+</html>
+
