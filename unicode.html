@@ -16,7 +16,7 @@ button{border:1px solid black; background:silver;}
 <button onclick="copy1()">📋</button></left>
 
 <input type="text" size="1" value="( ͡° ͜ʖ ͡°)" id="2"></right>
-<right id="two"><button onclick="copy1()">📋</button>
+<right id="two"><button onclick="copy2()">📋</button>
 </pre>
 <script>
 function copy1() {
@@ -33,7 +33,7 @@ function copy2() {
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
-  document.getElementByID("copied").innerHTML = "copied!";
+  document.getElementById("copied").innerHTML = "copied!";
 }
 </script><script>
 function copy3() {
@@ -41,7 +41,7 @@ function copy3() {
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
-  document.getElementByID("copied").innerHTML = "copied!";
+  document.getElementById("copied").innerHTML = "copied!";
 }
 </script><script>
 function copy4() {
@@ -49,7 +49,7 @@ function copy4() {
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
-  document.getElementByID("copied").innerHTML = "copied!";
+  document.getElementById("copied").innerHTML = "copied!";
 }
 </script>
 
