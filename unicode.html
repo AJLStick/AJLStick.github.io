@@ -2,57 +2,99 @@
 <html>
 <style>
 html{font-family:mono; font-size:20px;}
-input{border:none;font-size:20px;}
+input{border:none;font-size:20px;pointer-events:none;}
 #one{width:1px;}
 #two{width:1px;}
 button{border:1px solid black; background:silver;}
 #copied{align:center;}
 </style>
 <body>
-<p>Unicode</p><p id="copied"></p>
+<pre>
+</pre>
+
+<p id="copied"></p>
 <pre>
 <hr>
 <left id="one"><input type="text" value="ඞ" size="1" id="1">
-<button onclick="copy1()">📋</button></left>
+<button onclick="copy1()">copy</button></left>
 
 <input type="text" size="1" value="( ͡° ͜ʖ ͡°)" id="2"></right>
-<right id="two"><button onclick="copy2()">📋</button>
+<right id="two"><button onclick="copy2()">copy</button>
+
+<left id="three"><input type="text" value="☃" size="1" id="3">
+<button onclick="copy3()">copy</button></left>
+
+<input type="text" size="1" value="[̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]" id="4"></right>
+<right id="four"><button onclick="copy4()">copy</button>
+
+<left id="five"><input type="text" value="©" size="1" id="5">
+<button onclick="copy5()">copy</button></left>
+
+<input type="text" size="1" value="࿊" id="6"></right>
+<right id="six"><button onclick="copy6()">copy</button>
+
+<input type="text" size="1" value="⏻" id="7"></right>
+<right id="seven"><button onclick="copy7()">copy</button>
 </pre>
+
+
 <script>
 function copy1() {
-  var copyText = document.getElementById("1");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
-  document.getElementById("copied").innerHTML = "copied!";
+  var copyText = document.getElementById("1");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("copied").innerHTML = "copied!";
 }
 </script>
 <script>
 function copy2() {
-  var copyText = document.getElementById("2");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
-  document.getElementById("copied").innerHTML = "copied!";
+  var copyText = document.getElementById("2");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("copied").innerHTML = "copied!";
 }
 </script><script>
 function copy3() {
-  var copyText = document.getElementById("3");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
-  document.getElementById("copied").innerHTML = "copied!";
+  var copyText = document.getElementById("3");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("copied").innerHTML = "copied!";
 }
 </script><script>
 function copy4() {
-  var copyText = document.getElementById("4");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
-  document.getElementById("copied").innerHTML = "copied!";
+  var copyText = document.getElementById("4");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("copied").innerHTML = "copied!";
+}
+</script><script>
+function copy5() {
+  var copyText = document.getElementById("5");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("copied").innerHTML = "copied!";
+}
+</script><script>
+function copy6() {
+  var copyText = document.getElementById("6");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("copied").innerHTML = "copied!";
+}
+</script><script>
+function copy7() {
+  var copyText = document.getElementById("7");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("copied").innerHTML = "copied!";
 }
 </script>
-
 </body>
 </html>
-
