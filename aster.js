@@ -369,7 +369,7 @@
         }
     };
     var GameGlobals = {
-        FPS: 120,
+        FPS: 60,
         useAnimationFrame: false,
         boids: {
             flockRadius: 400,
