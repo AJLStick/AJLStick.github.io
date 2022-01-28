@@ -1,0 +1,217 @@
+<style>
+  /* Only works if your computer supports unicode 8. Does not work in early versions of safari or internet explorer versions below 9 */
+
+#text {
+  position: fixed;
+  top: 10px;
+  left: 300px;
+  border:1px solid #808080;
+  padding: 5px 15px;
+  background: #CCC;
+  opacity: 0.95;
+}
+
+#text #demo {
+  position: absolute;
+    top: 40%;
+    left: 45%;
+    height: 30%;
+    width: 50%;
+}
+
+#text #up {
+  position: absolute;
+    top: 55%;
+    left: 40%;
+    height: 30%;
+    width: 50%;
+} 
+#text #down {
+  position: absolute;
+    top: 24%;
+    left: 40%;
+    height: 30%;
+    width: 50%;
+}
+
+#text h2 {
+  text-align: center;
+  line-height: 5px;
+}
+
+#text button {
+  position: absolute;
+    top: 140%;
+    left: 50%;
+    height: 20%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+}
+
+#controls {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  border:1px solid #808080;
+  padding: 5px 15px;
+  background: #CCC;
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.65);
+  opacity: 0.95;
+}
+
+#intro, #reddit {
+  width: 200px;
+  font-size: 0.9em;
+}
+
+#intro {
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+#controls p {
+  margin: 5px 0;
+}
+
+#controls label {
+  display: inline-block;
+  width: 130px;
+  font-size: 0.9em;
+}
+
+#controls input {
+  width: 70px;
+  text-align: center;
+}
+#controls select {
+  width: 70px;
+  text-align: center;
+}
+#controls #submit, #controls #random, #controls #hide {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+}
+
+#controls #submit {
+  width: 80px;
+  left: 10px;
+}
+
+#controls #random {
+  width: 70px;
+}
+
+#controls #hide {
+  width: 50px;
+  margin-right: 0;
+}
+
+#controls #shareLine {
+  margin-top: 15px;
+}
+
+#controls #buttonsLine {
+  margin-top: 15px;
+}
+  </style>
+<script>
+  var a = 1;
+var b;
+var count;
+var thing = ".";
+var final;
+function myFunction(){
+  final="";
+  thing = document.getElementById('char').value;
+  a=document.getElementById('height').value 
+  b=document.getElementById("top").value
+  c=document.getElementById("bottom").value 
+  for(i=1;i<=a;i++){ 
+   thing = thing + "&#x"+ b 
+  }
+  for(i=1;i<=document.getElementById('depth').value ;i++){ 
+   thing = thing + "&#x"+ c 
+  }
+  
+  for(i=1;i<=document.getElementById('length').value;i++){
+    final= final+thing;
+  }
+  var copy=final;
+  document.getElementById("demo").innerHTML = final;
+
+}//draw
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+
+ 
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+  textArea.style.padding = 0;
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+  textArea.style.background = 'transparent';
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.select();
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+    alert("Successfuly copied the text");
+  } catch (err) {
+    console.log('Oops, unable to copy');
+    alert("Error copying.");
+  }
+
+  document.body.removeChild(textArea);
+}
+
+
+var copyBobBtn = document.querySelector('.js-copy-bob-btn');
+
+copyBobBtn.addEventListener('click', function(event) {
+  copyTextToClipboard(document.getElementById('demo').innerHTML);
+});
+window.onload=myFunction()
+</script>
+<br><br><br>
+<div id="text">
+<p id="up">Dummy text</p>
+<p id="demo"></p>
+<p id="down">Dummy text</p>
+  
+  <button class="js-copy-bob-btn">Copy text</button>
+  <h2>Stacked diacritics generator</h2>
+<canvas id="canvas"></canvas>
+</div>
+<div id="controls">
+  <p id="intro">A thing.</p>
+	<p><label for="numberOfLines">Length</label><input id="length" type="text" value="10" title="How many times you want the charachters to repeat"/></p>
+  <p><label for="numberOfLines">Depth</label><input type="text" id="depth" value="20" title="How deep you want the charachters to extend"/></p>
+	<p><label for="size">Height</label><input type="text" id="height" value="20" title="How high you want the charachters to extend"/></p>
+	<p><label for="speed">Base Charachter</label><input type="text" id="char" value="." title="The base charachter to stack diacritics on"/></p>
+	<p><label for="increment">Top Charachter</label><select id="top">
+  <option value=0303> ̃</option>
+  <option value=0304> ̄</option>
+  <option selected=true value=033f> ̿</option>
+  <option value=202e> RTLO/option>
+</select>
+  
+</p>
+	<p><label for="turn">Bottom Charachter</label>
+    <select id="bottom">
+  <option value=0330> ̴</option> 
+  <option value=0320> ̱</option>
+  <option selected=true value=0347> ̳</option>
+  <option value=035a> ͚</option>
+  <option value=0332> ̲	</option>
+        <option value=202e> RTLO</option>
+</select>
+</p>
+  <button onclick="myFunction()">Generate!</button>
+</div>
